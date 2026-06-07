@@ -9,7 +9,7 @@
   <title>PortFolio - DEV</title>
 </head>
 
-<body>
+<body id="body">
   <div style="height: 100vh; position: relative;" class="flex flex-col justify-center w-full px-5">
     <h1 id="dev">
       <span>D.</span>
@@ -17,7 +17,17 @@
       <span id="dev-ev">ev</span>
     </h1>
 
-    <h2 id="myName">Guilherme Polezi Machado</h2>
+    <div class="absolut inline-block cursor-default select-none parallax-layer" data-speed="5" id="glitch-wrapper">
+
+      <h2 id="myName" class="text-6xl font-bold text-black dark:text-white">Guilherme Polezi Machado</h2>
+
+      <h2 class="glitch-cyan absolute top-0 left-0 text-6xl font-bold text-[#00ffff] opacity-0 pointer-events-none">
+        Guilherme Polezi Machado</h2>
+
+      <h2 class="glitch-red absolute top-0 left-0 text-6xl font-bold text-[#ff003c] opacity-0 pointer-events-none">
+        Guilherme Polezi Machado</h2>
+
+    </div>
     <div id="root" class="h-140 p-20">
     </div>
     <div class="navbar flex justify-between p-4 items-start">
@@ -192,9 +202,9 @@
 
     });
   </script>
-  
+
   <script>
-    
+
     // Registre o plugin primeiro (necessário se usar módulos ou builds)
     // gsap.registerPlugin(DrawSVGPlugin);
     const menuBtn = document.querySelector('.menu-btn');
@@ -221,12 +231,12 @@
 
     // Estado inicial já escondido via GSAP (em vez de CSS opacity: 0 manual)
     gsap.set(items, { opacity: 0, y: -8 });
-    gsap.set(dropdown, { display: "none", opacity: 0, scale: 0.95, transformOrigin: "top center",  });
+    gsap.set(dropdown, { display: "none", opacity: 0, scale: 0.95, transformOrigin: "top center", });
 
     const openMenu = () => {
       dropdown.classList.add('open');
 
-      gsap.to(dropdown, {display: "block", opacity: 1, scale: 1, duration: 0.25, ease: "power2.out" });
+      gsap.to(dropdown, { display: "block", opacity: 1, scale: 1, duration: 0.25, ease: "power2.out" });
 
       gsap.to(items, {
         opacity: 1,
@@ -263,7 +273,86 @@
     document.addEventListener('click', () => {
       if (isMenuOpen) { isMenuOpen = false; closeMenu(); }
     });
-    
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById("body");
+      const layers = document.querySelectorAll(".parallax-layer");
+
+      // A mágica acontece quando o mouse se move dentro do container
+      container.addEventListener("mousemove", (e) => {
+        // 1. Pega as dimensões e posição atual do container na tela
+        const rect = container.getBoundingClientRect();
+
+        // 2. Calcula o centro exato do container
+        const centerX = rect.left + (rect.width / 2);
+        const centerY = rect.top + (rect.height / 2);
+
+        // 3. Descobre a porcentagem da posição do mouse (vai de -1 até 1)
+        // Se o mouse estiver no centro, o valor é 0.
+        const xPos = (e.clientX - centerX) / (rect.width / 2);
+        const yPos = (e.clientY - centerY) / (rect.height / 2);
+
+        // 4. Anima cada camada
+        layers.forEach(layer => {
+          // Pega a "velocidade" ou "peso" que definimos no HTML
+          const speed = layer.getAttribute("data-speed");
+
+          // Multiplica a posição do mouse pela velocidade da camada
+          const xMove = xPos * speed;
+          const yMove = yPos * speed;
+
+          // O GSAP faz a transição até o novo ponto ser suave
+          gsap.to(layer, {
+            x: xMove,
+            y: yMove,
+            duration: 0.5, // Quanto maior, mais "elástico" ou "flutuante" fica
+            ease: "power2.out"
+          });
+        });
+      });
+
+      // 5. Opcional (mas recomendado): Resetar as posições quando o mouse sair do container
+      container.addEventListener("mouseleave", () => {
+        gsap.to(layers, {
+          x: 0,
+          y: 0,
+          duration: 0.7,
+          ease: "power3.out"
+        });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cyan = document.querySelector('.glitch-cyan');
+      const red = document.querySelector('.glitch-red');
+
+      // Criamos a timeline. 
+      // repeatDelay: 2 significa que ele dá o glitch, espera 2 segundos, e dá de novo.
+      const tlGlitch = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+
+      // A sequência do Glitch (vários frames super rápidos)
+      tlGlitch
+        // 1. Faz os fantasmas aparecerem instantaneamente
+        .set([cyan, red], { opacity: 0.8 })
+
+        // 2. Espasmo 1: Move para lados opostos e corta pedaços da letra
+        .to(cyan, { x: -4, y: 2, clipPath: 'inset(10% 0 60% 0)', duration: 0.05 })
+        .to(red, { x: 4, y: -2, clipPath: 'inset(40% 0 20% 0)', duration: 0.05 }, "<") // o "<" faz rodar junto com a linha de cima
+
+        // 3. Espasmo 2: Inverte as posições e muda o corte
+        .to(cyan, { x: 3, y: -1, clipPath: 'inset(80% 0 5% 0)', duration: 0.04 })
+        .to(red, { x: -3, y: 1, clipPath: 'inset(5% 0 70% 0)', duration: 0.04 }, "<")
+
+        // 4. Espasmo 3: Mais uma piscada caótica
+        .to(cyan, { x: -2, y: -2, clipPath: 'inset(30% 0 40% 0)', duration: 0.04 })
+        .to(red, { x: 2, y: 2, clipPath: 'inset(60% 0 10% 0)', duration: 0.04 }, "<")
+
+        // 5. Zera tudo e esconde os fantasmas
+        .set([cyan, red], { x: 0, y: 0, clipPath: 'inset(0 0 0 0)', opacity: 0 });
+    });
   </script>
 </body>
 
