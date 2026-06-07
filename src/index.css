@@ -44,6 +44,6 @@ font-family: "Iosevka Charon Mono", monospace;
   
 }
 
-.dropdown-item:hover {
+.dropdown-item a:hover {
   color: gray;
 }
