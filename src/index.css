@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import "tailwindcss";
 
 
@@ -5,11 +6,18 @@
   border: 1px solid rgba(128, 128, 128, 0.149);
 }
 
+#dev {
+  font-size: 36px;
+  font-family: "Iosevka Charon Mono", monospace;
+  font-weight: 300;
+}
 
 #myName {
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 5px;
-  font-size: 48px;
-  font-weight: bolder;
+  font-size: 64px;
+  font-family: "Iosevka Charon Mono", monospace;
+  font-weight: 800;
+  font-style: normal;
 }
