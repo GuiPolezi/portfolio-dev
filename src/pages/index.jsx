@@ -11,11 +11,3 @@ export function Home() {
         </div>
     )
 }
-
-export function Home2() {
-    return (
-        <div>
-            <p>Hello world</p>
-        </div>
-    )
-}

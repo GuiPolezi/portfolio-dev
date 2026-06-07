@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom"
-import { Home, Home2 } from './pages/index'
+import { Home} from './pages/index'
 
 
 export default function AppRoutes() {
@@ -12,12 +12,7 @@ export default function AppRoutes() {
                 }
             />
 
-            <Route
-                path="/a"
-                element={
-                    <Home2 />
-                }
-            />
+            
         </Routes>
 
     )
