@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
@@ -23,21 +23,52 @@
     <div class="navbar flex justify-between p-4 items-start">
       <div class="theme-changer flex gap-3">
         <label class="flex items-center gap-1 cursor-pointer">
-          <input type="radio" name="theme-selection" value="dark" class="accent-black"/>
+          <input type="radio" name="theme-selection" value="dark" class="accent-black" />
           <span class="text-base text-black dark:text-white">Dark</span>
         </label>
         <label class="flex items-center gap-1 cursor-pointer">
-          <input type="radio" name="theme-selection" value="light" class="accent-black"/>
+          <input type="radio" name="theme-selection" value="light" class="accent-black" />
           <span class="text-base text-black dark:text-white">Light</span>
         </label>
       </div>
-      <div class="menu-btn text-black dark:text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor"
-          style="opacity:1;">
-          <path
-            d="M8 6a2 2 0 1 1-4 0a2 2 0 0 1 4 0m0 6a2 2 0 1 1-4 0a2 2 0 0 1 4 0m-2 8a2 2 0 1 0 0-4a2 2 0 0 0 0 4m8-14a2 2 0 1 1-4 0a2 2 0 0 1 4 0m-2 8a2 2 0 1 0 0-4a2 2 0 0 0 0 4m2 4a2 2 0 1 1-4 0a2 2 0 0 1 4 0m4-10a2 2 0 1 0 0-4a2 2 0 0 0 0 4m2 4a2 2 0 1 1-4 0a2 2 0 0 1 4 0m-2 8a2 2 0 1 0 0-4a2 2 0 0 0 0 4" />
-        </svg>
+      <div class="menu-wrapper">
+        <div class="menu-btn text-black dark:text-white cursor-pointer w-max transition-transform active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+            <circle cx="6" cy="6" r="2" />
+            <circle cx="12" cy="6" r="2" />
+            <circle cx="18" cy="6" r="2" />
+
+            <circle cx="6" cy="12" r="2" />
+            <circle id="middle-dot" cx="12" cy="12" r="2" />
+            <circle cx="18" cy="12" r="2" />
+
+            <circle cx="6" cy="18" r="2" />
+            <circle cx="12" cy="18" r="2" />
+            <circle cx="18" cy="18" r="2" />
+          </svg>
+        </div>
+        <div class="dropdown bg-blue-500" id="dropdown">
+          <div class="dropdown-item">
+            <a href="/">Home</a>
+          </div>
+          <div class="dropdown-item">
+            <p>Info</p>
+          </div>
+          <div class="dropdown-item">
+            <p>Projects</p>
+          </div>
+          <div class="dropdown-item">
+            <p>Lab</p>
+          </div>
+          <div class="dropdown-item">
+            <p>Stacks</p>
+          </div>
+          <div class="dropdown-item">
+            <p>Contact</p>
+          </div>
+        </div>
       </div>
+
       <p style="font-size: 10px; width: max-content; color: gray;">© Developed By <a
           href="https://github.com/GuiPolezi/" target="_blank">Gui Polezi</a></p>
     </div>
@@ -160,6 +191,79 @@
       });
 
     });
+  </script>
+  
+  <script>
+    
+    // Registre o plugin primeiro (necessário se usar módulos ou builds)
+    // gsap.registerPlugin(DrawSVGPlugin);
+    const menuBtn = document.querySelector('.menu-btn');
+    const middleDot = document.querySelector('#middle-dot');
+
+    // Variável para rastrear o estado
+    let isMenuOpen = false;
+
+    // Criamos a animação (agora ela não precisa ser uma timeline pausada se for apenas um estado)
+    const animateMiddleDot = (shouldHide) => {
+      gsap.to(middleDot, {
+        scale: shouldHide ? 0 : 1,
+        opacity: shouldHide ? 0 : 1,
+        transformOrigin: "center center",
+        duration: 0.4,
+        ease: "back.out(2)" // "back.out" fica mais natural para "aparecer/sumir"
+      });
+    };
+
+
+
+    const dropdown = document.querySelector('#dropdown');
+    const items = document.querySelectorAll('.dropdown-item');
+
+    // Estado inicial já escondido via GSAP (em vez de CSS opacity: 0 manual)
+    gsap.set(items, { opacity: 0, y: -8 });
+    gsap.set(dropdown, { display: "none", opacity: 0, scale: 0.95, transformOrigin: "top center",  });
+
+    const openMenu = () => {
+      dropdown.classList.add('open');
+
+      gsap.to(dropdown, {display: "block", opacity: 1, scale: 1, duration: 0.25, ease: "power2.out" });
+
+      gsap.to(items, {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+        stagger: 0.06,      // cada item abre 60ms depois do anterior
+        ease: "power2.out"
+      });
+
+      // Seu código existente do ponto do meio
+      gsap.to(middleDot, { scale: 0, opacity: 0, transformOrigin: "center center", duration: 0.4, ease: "back.out(2)" });
+    };
+
+    const closeMenu = () => {
+      gsap.to(dropdown, {
+        display: "none",
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.2,
+        ease: "power2.in",
+        onComplete: () => dropdown.classList.remove('open') // remove pointer-events só no fim
+      });
+      gsap.to(items, { opacity: 0, y: -8, duration: 0.15, ease: "power2.in" });
+      gsap.to(middleDot, { scale: 1, opacity: 1, transformOrigin: "center center", duration: 0.4, ease: "back.out(2)" });
+    };
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // evita fechar imediatamente pelo listener do document
+      isMenuOpen = !isMenuOpen;
+      isMenuOpen ? openMenu() : closeMenu();
+    });
+
+    // Fecha ao clicar fora
+    document.addEventListener('click', () => {
+      if (isMenuOpen) { isMenuOpen = false; closeMenu(); }
+    });
+    
   </script>
 </body>
 
