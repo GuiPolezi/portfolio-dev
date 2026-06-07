@@ -9,20 +9,64 @@
   </head>
   <body>
     <div style="height: 100vh; position: relative;" class="flex flex-col justify-center w-full px-5">
-      <h1 id="dev">D.ev</h1>
+      <h1 id="dev">
+        <span>D.</span>
+        <span id="dev-mid">esign & Development</span>
+        <span id="dev-ev">ev</span>
+      </h1>
+      
       <h2 id="myName">Guilherme Polezi Machado</h2>
       <div id="root" class="h-140 p-20">
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-        // Move a caixa 300px para a direita e gira 360 graus em 2 segundos
-        gsap.to("#dev", { 
-            x: 100, 
+ <script>
+      // Selecionando os elementos
+      const container = document.getElementById("dev");
+      const midText = document.getElementById("dev-mid");
+      const alphaletter = document.getElementById("dev-ev");
+      // Setup inicial do GSAP (O equivalente ao seu useEffect com gsap.set)
+      gsap.set(midText, {
+          width: 0,
+          opacity: 0,
+          overflow: "hidden",
+          display: "inline-block",
+          whiteSpace: "nowrap",
+      });
 
-            duration: 2 
-        });
+      // Evento de Mouse Enter
+      container.addEventListener("mouseenter", () => {
+         gsap.to(alphaletter, {
+            width: 0,
+            opacity: 0,
+            duration: 0.2,
+          });
+
+          gsap.to(midText, {
+              width: "auto",
+              opacity: 1,
+              duration: 0.6,
+              ease: "power3.out",
+          });
+         
+      });
+
+      // Evento de Mouse Leave
+      container.addEventListener("mouseleave", () => {
+          gsap.to(midText, {
+              width: 0,
+              opacity: 0,
+              duration: 0.4,
+              ease: "power2.in",
+          });
+        gsap.to(alphaletter, {
+            width: 0,
+            opacity: 1,
+            duration: 0.6,
+            
+          });
+      });
     </script>
   </body>
 </html>
