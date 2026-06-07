@@ -22,20 +22,13 @@
     </div>
     <div class="navbar flex justify-between p-4 items-start">
       <div class="theme-changer flex gap-3">
-        <label class="flex items-center gap-2 cursor-pointer select-none">
-          <input type="radio" name="theme-selection" value="dark"
-            class="w-4 h-4 text-black bg-white border-gray-400 focus:ring-2 focus:ring-black cursor-pointer dark:focus:ring-white" />
-          <span class="text-base font-bold text-slate-900 dark:text-slate-50">
-            Dark
-          </span>
+        <label class="flex items-center gap-1 cursor-pointer">
+          <input type="radio" name="theme-selection" value="dark" />
+          <span class="text-base text-black">Dark</span>
         </label>
-
-        <label class="flex items-center gap-2 cursor-pointer select-none">
-          <input type="radio" name="theme-selection" value="light"
-            class="w-4 h-4 text-black bg-white border-gray-400 focus:ring-2 focus:ring-black cursor-pointer dark:focus:ring-white" />
-          <span class="text-base font-bold text-slate-900 dark:text-slate-50">
-            Light
-          </span>
+        <label class="flex items-center gap-1 cursor-pointer">
+          <input type="radio" name="theme-selection" value="light" />
+          <span class="text-base text-black">Light</span>
         </label>
       </div>
       <div class="menu-btn">
@@ -112,62 +105,62 @@
     });
   </script>
   <script>
-  // Envolvemos tudo para garantir que o HTML já foi carregado
-  document.addEventListener('DOMContentLoaded', () => {
-    
-    const root = document.documentElement; // A tag <html>
-    const radios = document.querySelectorAll('input[name="theme-selection"]');
+    // Envolvemos tudo para garantir que o HTML já foi carregado
+    document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. O equivalente ao seu useState (pega do storage ou padrão 'light')
-    const initialTheme = localStorage.getItem('theme') || 'light';
+      const root = document.documentElement; // A tag <html>
+      const radios = document.querySelectorAll('input[name="theme-selection"]');
 
-    // 2. A função que faz a mágica (equivalente ao seu useEffect)
-    function applyTheme(theme, animate = true) {
-      // Salva a escolha do usuário
-      localStorage.setItem('theme', theme);
+      // 1. O equivalente ao seu useState (pega do storage ou padrão 'light')
+      const initialTheme = localStorage.getItem('theme') || 'light';
 
-      // Adiciona/Remove a classe do Tailwind
-      if (theme === 'dark') {
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
+      // 2. A função que faz a mágica (equivalente ao seu useEffect)
+      function applyTheme(theme, animate = true) {
+        // Salva a escolha do usuário
+        localStorage.setItem('theme', theme);
+
+        // Adiciona/Remove a classe do Tailwind
+        if (theme === 'dark') {
+          root.classList.add('dark');
+        } else {
+          root.classList.remove('dark');
+        }
+
+        // Deixa a bolinha certa marcada no HTML
+        const activeRadio = document.querySelector(`input[name="theme-selection"][value="${theme}"]`);
+        if (activeRadio) activeRadio.checked = true;
+
+        // Configuração de cores baseada no tema escolhido
+        const cores = {
+          backgroundColor: theme === 'dark' ? '#0f172a' : '#ffffff',
+          color: theme === 'dark' ? '#f8fafc' : '#0f172a',
+        };
+
+        // Se for clique do usuário, faz a animação suave. 
+        // Se for apenas o recarregamento da página, aplica direto.
+        if (animate) {
+          gsap.to('body', {
+            ...cores,
+            duration: 0.5,
+            ease: 'power2.out',
+          });
+        } else {
+          gsap.set('body', cores);
+        }
       }
 
-      // Deixa a bolinha certa marcada no HTML
-      const activeRadio = document.querySelector(`input[name="theme-selection"][value="${theme}"]`);
-      if (activeRadio) activeRadio.checked = true;
+      // 3. Ao abrir a página, aplica o tema salvo instantaneamente (sem animação)
+      applyTheme(initialTheme, false);
 
-      // Configuração de cores baseada no tema escolhido
-      const cores = {
-        backgroundColor: theme === 'dark' ? '#0f172a' : '#ffffff',
-        color: theme === 'dark' ? '#f8fafc' : '#0f172a',
-      };
-
-      // Se for clique do usuário, faz a animação suave. 
-      // Se for apenas o recarregamento da página, aplica direto.
-      if (animate) {
-        gsap.to('body, h1, h2, p', {
-          ...cores,
-          duration: 0.5,
-          ease: 'power2.out',
+      // 4. Adiciona o ouvinte de cliques nos inputs (equivalente ao seu onChange)
+      radios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          applyTheme(e.target.value, true); // Aplica com animação
         });
-      } else {
-        gsap.set('body, h1, h2, p', cores);
-      }
-    }
-
-    // 3. Ao abrir a página, aplica o tema salvo instantaneamente (sem animação)
-    applyTheme(initialTheme, false);
-
-    // 4. Adiciona o ouvinte de cliques nos inputs (equivalente ao seu onChange)
-    radios.forEach(radio => {
-      radio.addEventListener('change', (e) => {
-        applyTheme(e.target.value, true); // Aplica com animação
       });
-    });
 
-  });
-</script>
+    });
+  </script>
 </body>
 
 </html>
