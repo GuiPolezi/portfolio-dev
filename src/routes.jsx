@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 import { Home} from './pages/index'
+import {Info} from './pages/info'
 
 
 export default function AppRoutes() {
@@ -12,6 +13,12 @@ export default function AppRoutes() {
                 }
             />
 
+            <Route
+                path="/info"
+                element={
+                    <Info />
+                }
+            />
             
         </Routes>
 
