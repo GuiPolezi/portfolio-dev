@@ -354,6 +354,50 @@
         .set([cyan, red], { x: 0, y: 0, clipPath: 'inset(0 0 0 0)', opacity: 0 });
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Função principal que dispara o Glitch na tela inteira
+      const triggerCrash = () => {
+        const tl = gsap.timeline({
+          // Assim que a animação acabar, ele chama a função para agendar o próximo!
+          onComplete: scheduleNextCrash 
+        });
+        
+        tl.to(document.body, { 
+            filter: "invert(1) hue-rotate(180deg)", 
+            skewX: 2, 
+            duration: 0.05 
+          })
+          .to(document.body, { 
+            filter: "invert(0.8) hue-rotate(90deg)", 
+            skewX: -2, 
+            duration: 0.05 
+          })
+          .to(document.body, { 
+            filter: "none", 
+            skewX: 0, 
+            duration: 0.05 
+          });
+      };
+
+      // Função que calcula um tempo aleatório e agenda o próximo Crash
+      const scheduleNextCrash = () => {
+        // Define o intervalo de tempo em milissegundos
+        // Exemplo: Entre 4 e 12 segundos
+        const minTime = 4000;  // 4 segundos
+        const maxTime = 12000; // 12 segundos
+        
+        // Sorteia um número entre minTime e maxTime
+        const randomDelay = Math.random() * (maxTime - minTime) + minTime;
+          
+        // Aguarda o tempo sorteado e dispara o triggerCrash
+        setTimeout(triggerCrash, randomDelay);
+      };
+
+      // Dá o "start" inicial no ciclo assim que a página carrega
+      scheduleNextCrash();
+    });
+  </script>
 </body>
 
 </html>
