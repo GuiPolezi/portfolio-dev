@@ -11,7 +11,7 @@ export function Info() {
                        Morbi nec ultrices est. Pellentesque ligula urna, elementum commodo urna sed, interdum faucibus est. Pellentesque a ante eu diam malesuada tincidunt nec id eros. Aliquam eros arcu, tempor quis leo vitae, posuere rhoncus turpis. Curabitur elementum leo eget massa elementum, vel laoreet massa blandit. Aenean mattis vulputate auctor. Sed non ipsum congue, sollicitudin mauris et, porta magna. Suspendisse in urna at purus porta luctus sed at sapien. Curabitur scelerisque imperdiet elit et ultricies.
                     </p>
                     <h3 id="infoText">My CV</h3>
-                    <a id="infoA" href="https://github.com/GuiPolezi">Download <i class="fa-solid fa-arrow-right"></i> </a>
+                    <a id="infoA" href="#">Download <i class="fa-solid fa-arrow-right"></i> </a>
                 </div>
                 <div id="topics" className="col-span-1 text-end">
                         <p className="text-5xl mb-5" id="infoTitle">Front-End Developer</p>
