@@ -16,9 +16,13 @@ export function Projects() {
             <div className="content mt-15">
                 <div className="grid grid-cols-2">
                     <div className="col-span-1">
-                        <div className="image bg-red-200 h-70" style={{ borderRadius: '10px' }}>
-                            <p>oi</p>
-                        </div>
+                         <FlipCard
+                            direction="horizontal"
+                            bgImage="images/myDesk.png"
+                            backTitle="Angular"
+                            backText="Good tools make application development quicker and easier to maintain than if you did everything by hand."
+                            className="flip-content-one"
+                        />
                     </div>
                     <div className="col-span-1">
                         <div className="grid grid-cols-6">
@@ -60,7 +64,7 @@ export function Projects() {
                             bgImage="images/myDesk.png"
                             backTitle="Angular"
                             backText="Good tools make application development quicker and easier to maintain than if you did everything by hand."
-                            className="flip-content-one"
+                            className="flip-content-two"
                         />
                     </div>
                 </div>
@@ -96,7 +100,7 @@ export default function FlipCard({
         // Para evitar distorções, o GSAP aplica perspectiva no elemento pai
         gsap.set([frontRef.current, backRef.current], {
             transformPerspective: 1000,
-            backfaceVisibility: "hidden" // Ajuda a evitar bugs visuais no flip 3D
+         //   backfaceVisibility: "hidden" // Ajuda a evitar bugs visuais no flip 3D
         });
 
         // 2. Criando a Timeline Pausada
