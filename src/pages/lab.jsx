@@ -45,8 +45,30 @@ const GithubReposWidget = ({ username }) => {
     };
 
     return (
-        <div>
-            <h3>Repositórios Recentes do GitHub</h3>
+        <>
+            <div id='repoDiv' className='bg-violet-500 mt-10'>
+                {repos.map(repo =>(
+                    <div key={repo.id} className='bg-amber-700 '>
+                        <div className='flex items-center gap-4'>
+                            <a id='titleRepo' href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
+                            <span style={{ 
+                                fontSize: '11px', 
+                                color: '#586069', 
+                                border: '1px solid black', 
+                                borderRadius: '12px', 
+                                padding: '2px 8px',
+                                fontWeight: '600'
+                            }}>
+                                {repo.private ? 'Private' : 'Public'}
+                            </span>
+                        </div>
+                        <p className='mb-2 opacity-75'>{repo.description || 'Nenhuma descrição fornecida.'}</p>
+                        {repo.language && <span className='text-sm opacity-75'>💻 {repo.language}</span>}
+                       
+                    </div>
+                ))}
+            </div>
+            {/*
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px' }}>
                 {repos.map(repo => (
                     <div key={repo.id} style={cardStyle}>
@@ -66,7 +88,8 @@ const GithubReposWidget = ({ username }) => {
                     </div>
                 ))}
             </div>
-        </div>
+                            */}
+        </>
     );
 };
 
@@ -136,8 +159,8 @@ export function Lab() {
             <div className="headerLab text-start">
                 <h3 id="titleLab" className="text-5xl">Lab</h3>
                 <div id="iconsLab">
-                    <i id='iconlabone' class="fa-solid fa-skull-crossbones parallax-layer" data-speed="20"></i>
-                    <i id='iconlabtwo' class="fa-solid fa-flask-vial parallax-layer" data-speed="10"></i>
+                    <i id='iconlabone' class="fa-solid fa-skull-crossbones parallax-layer" data-speed="12"></i>
+                    <i id='iconlabtwo' class="fa-solid fa-flask-vial parallax-layer" data-speed="20"></i>
                     <i id='iconlabthree' class="fa-solid fa-vial-virus parallax-layer" data-speed="8"></i>
                 </div>
             </div>
