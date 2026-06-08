@@ -41,7 +41,7 @@ export function Projects() {
                     </div>
                 </div>
             </div>
-            <div className="content mt-40">
+            <div className="content mt-50">
                 <div className="grid grid-cols-2">
                     <div className="col-span-1">
                         <div className="grid grid-cols-6">
