@@ -46,9 +46,9 @@ const GithubReposWidget = ({ username }) => {
 
     return (
         <>
-            <div id='repoDiv' className='bg-violet-500 mt-10'>
+            <div id='repoDiv' className='mt-10'>
                 {repos.map(repo =>(
-                    <div key={repo.id} className='bg-amber-700 '>
+                    <div key={repo.id} id='containerRepo'>
                         <div className='flex items-center gap-4'>
                             <a id='titleRepo' href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
                             <span style={{ 
@@ -62,9 +62,9 @@ const GithubReposWidget = ({ username }) => {
                                 {repo.private ? 'Private' : 'Public'}
                             </span>
                         </div>
-                        <p className='mb-2 opacity-75'>{repo.description || 'Nenhuma descrição fornecida.'}</p>
-                        {repo.language && <span className='text-sm opacity-75'>💻 {repo.language}</span>}
-                       
+                        <p className='opacity-75'>{repo.description || 'Nenhuma descrição fornecida.'}</p>
+                        {repo.language && <span className='text-sm opacity-75'><strong>Language:</strong> {repo.language}</span>}
+                        <div className='line'></div>
                     </div>
                 ))}
             </div>

@@ -185,6 +185,21 @@ font-family: "Iosevka Charon Mono", monospace;
 #repoDiv p {
   font-size: 20px;
 }
+
+.line {
+  border: 1px solid;
+  width: 80%;
+  margin: auto;
+  opacity: 0.5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#containerRepo:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
 /* Imagens */
 .image {
   background-size: cover;
