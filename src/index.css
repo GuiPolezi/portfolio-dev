@@ -96,3 +96,34 @@ font-family: "Iosevka Charon Mono", monospace;
 #titleDesc {
   opacity: 0.7;
 }
+
+#titleProject {
+    font-family: "Iosevka Charon Mono", monospace;
+  font-weight: 300;
+}
+
+#stars {
+  position: relative;
+  
+}
+
+#starone {
+  position: absolute;
+  right: 400px;
+  top: -30px;
+  color: #283618;
+}
+
+#startwo {
+  position: absolute;
+  z-index: 2;
+  color: #283618;
+}
+
+#starthree {
+  position: absolute;
+  right: -10px;
+  z-index: 1;
+  color: #283618;
+  opacity: 0.6;
+}
