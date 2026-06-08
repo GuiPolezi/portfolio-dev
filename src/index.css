@@ -138,6 +138,12 @@ font-family: "Iosevka Charon Mono", monospace;
   opacity: 0.6;
 }
 
+#titleLab {
+    font-family: "Iosevka Charon Mono", monospace;
+  font-weight: 300;
+}
+
+
 /* Imagens */
 .image {
   background-size: cover;

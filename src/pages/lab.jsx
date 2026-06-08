@@ -75,6 +75,9 @@ export default GithubReposWidget;
 export function Lab() {
     return (
         <>
+        <div className="headerLab text-start">
+                <h3 id="titleLab" className="text-5xl">Lab</h3>
+            </div>
             <GithubReposWidget username="GuiPolezi" />
         </>
     )
