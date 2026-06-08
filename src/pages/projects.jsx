@@ -18,7 +18,9 @@ export function Projects() {
                     <div className="col-span-1">
                          <FlipCard
                             direction="horizontal"
-                            bgImage="images/myDesk.png"
+                            bgImage="images/Jahint.png"
+                            bgColor="#606c38"
+                            colorText="#fefae0"
                             backTitle="Angular"
                             backText="Good tools make application development quicker and easier to maintain than if you did everything by hand."
                             className="flip-content-one"
@@ -62,6 +64,8 @@ export function Projects() {
                         <FlipCard
                             direction="horizontal"
                             bgImage="images/myDesk.png"
+                            bgColor="#fefae0"
+                            colorText="black"
                             backTitle="Angular"
                             backText="Good tools make application development quicker and easier to maintain than if you did everything by hand."
                             className="flip-content-two"
@@ -80,7 +84,9 @@ export default function FlipCard({
     frontText,
     backTitle,
     backText,
-    className = ''
+    className = '',
+    bgColor,
+    colorText,
 }) {
     const frontRef = useRef(null);
     const backRef = useRef(null);
@@ -116,11 +122,12 @@ export default function FlipCard({
                 rotateY: isVertical ? 0 : 180,
                 rotateX: isVertical ? 180 : 0,
                 backgroundImage: 'none',
-                backgroundColor: '#fefae0',
+                backgroundColor: `${bgColor}`,
             }, 0)
             // Anima o Verso (vem para a frente)
             .to(backRef.current, {
                 rotateY: 0,
+                color: `${colorText}`,
                 rotateX: 0,
                 opacity: 1,
             }, 0); // O '0' faz as duas animações rodarem exatamente ao mesmo tempo
