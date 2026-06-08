@@ -5,6 +5,15 @@
 
 #root {
   border: 1px solid rgba(128, 128, 128, 0.504);
+
+  overflow-y: auto;       /* scroll apenas aqui */
+  overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+
+}
+
+#root::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 #dev {
