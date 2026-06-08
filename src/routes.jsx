@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { Home } from './pages/index'
 import { Info } from './pages/info'
 import { Projects } from './pages/projects'
+import { Lab } from './pages/lab'
 
 export default function AppRoutes() {
     // 1. Pegamos a localização atual da URL
@@ -15,7 +16,7 @@ export default function AppRoutes() {
         
         if (rootElement) {
             // Se a rota for /projects, liberamos o scroll. Caso contrário, bloqueamos.
-            if (location.pathname === '/projects') {
+            if (location.pathname === '/projects' || location.pathname === '/lab') {
                 rootElement.style.overflowY = 'auto';
             } else {
                 rootElement.style.overflowY = 'hidden';
@@ -28,6 +29,7 @@ export default function AppRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/info" element={<Info />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/lab" element={<Lab />} />
         </Routes>
     )
 }
