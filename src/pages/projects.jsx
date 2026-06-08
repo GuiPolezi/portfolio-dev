@@ -58,7 +58,6 @@ export function Projects() {
                         <FlipCard
                             direction="horizontal"
                             bgImage="images/myDesk.png"
-                            frontText="MOUNTAIN"
                             backTitle="Angular"
                             backText="Good tools make application development quicker and easier to maintain than if you did everything by hand."
                             className="flip-content-one"
@@ -96,7 +95,8 @@ export default function FlipCard({
 
         // Para evitar distorções, o GSAP aplica perspectiva no elemento pai
         gsap.set([frontRef.current, backRef.current], {
-            transformPerspective: 1000
+            transformPerspective: 1000,
+            backfaceVisibility: "hidden" // Ajuda a evitar bugs visuais no flip 3D
         });
 
         // 2. Criando a Timeline Pausada
@@ -111,6 +111,8 @@ export default function FlipCard({
             .to(frontRef.current, {
                 rotateY: isVertical ? 0 : 180,
                 rotateX: isVertical ? 180 : 0,
+                backgroundImage: 'none',
+                backgroundColor: '#fefae0',
             }, 0)
             // Anima o Verso (vem para a frente)
             .to(backRef.current, {
@@ -131,19 +133,18 @@ export default function FlipCard({
 
     return (
         <div
-            className="flip-container h-70"
+            className="flip-container relative h-70"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             <div
-                className={`front image h-70 ${className}`}
+                className={`front absolute inset-0 w-full image h-full ${className}`}
                 ref={frontRef}
                 style={{ backgroundImage: `url(${bgImage})` }}
             >
-                <h1 className="text-shadow">{frontText}</h1>
             </div>
 
-            <div className="back" ref={backRef}>
+            <div className="back p-5 inset-0 w-full h-full" ref={backRef}>
                 <h2>{backTitle}</h2>
                 <p>{backText}</p>
             </div>
