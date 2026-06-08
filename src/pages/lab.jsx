@@ -10,7 +10,7 @@ const GithubReposWidget = ({ username }) => {
         const fetchRepos = async () => {
             try {
                 const response = await fetch(
-                    `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`
+                    `https://api.github.com/users/${username}/repos?sort=updated&per_page=10`
                 );
 
                 if (!response.ok) {
@@ -47,25 +47,27 @@ const GithubReposWidget = ({ username }) => {
     return (
         <>
             <div id='repoDiv' className='mt-10'>
-                {repos.map(repo =>(
-                    <div key={repo.id} id='containerRepo'>
-                        <div className='flex items-center gap-4'>
-                            <a id='titleRepo' href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
-                            <span style={{ 
-                                fontSize: '11px', 
-                                color: '#586069', 
-                                border: '1px solid black', 
-                                borderRadius: '12px', 
-                                padding: '2px 8px',
-                                fontWeight: '600'
-                            }}>
-                                {repo.private ? 'Private' : 'Public'}
-                            </span>
+                {repos.map(repo => (
+                    <a key={repo.id} href={repo.html_url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <div id='containerRepo' className='p-5'>
+                            <div className='flex items-center gap-4'>
+                                <span id='titleRepo'>{repo.name}</span>
+                                <span style={{
+                                    fontSize: '11px',
+                                    color: '#586069',
+                                    border: '1px solid black',
+                                    borderRadius: '12px',
+                                    padding: '2px 8px',
+                                    fontWeight: '600'
+                                }}>
+                                    {repo.private ? 'Private' : 'Public'}
+                                </span>
+                            </div>
+                            <p className='opacity-75'>{repo.description || 'Nenhuma descrição fornecida.'}</p>
+                            {repo.language && <span className='text-sm opacity-75'><strong>Language:</strong> {repo.language}</span>}
+                            <div className='line'></div>
                         </div>
-                        <p className='opacity-75'>{repo.description || 'Nenhuma descrição fornecida.'}</p>
-                        {repo.language && <span className='text-sm opacity-75'><strong>Language:</strong> {repo.language}</span>}
-                        <div className='line'></div>
-                    </div>
+                    </a>
                 ))}
             </div>
             {/*
@@ -97,63 +99,63 @@ export default GithubReposWidget;
 
 
 export function Lab() {
-     // A referência continua aqui para sabermos QUAIS elementos animar (as estrelas)
-  const containerRef = useRef(null);
+    // A referência continua aqui para sabermos QUAIS elementos animar (as estrelas)
+    const containerRef = useRef(null);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (!containerRef.current) return;
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            if (!containerRef.current) return;
 
-      // Restringe a busca das camadas apenas para dentro de Projects
-      const q = gsap.utils.selector(containerRef.current);
-      const layers = q(".parallax-layer");
+            // Restringe a busca das camadas apenas para dentro de Projects
+            const q = gsap.utils.selector(containerRef.current);
+            const layers = q(".parallax-layer");
 
-      // Como estamos rastreando a tela toda, usamos o tamanho da JANELA (window)
-      // em vez do getBoundingClientRect() do container.
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
+            // Como estamos rastreando a tela toda, usamos o tamanho da JANELA (window)
+            // em vez do getBoundingClientRect() do container.
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
 
-      // Descobre a porcentagem da posição do mouse (vai de -1 até 1)
-      const xPos = (e.clientX - centerX) / (window.innerWidth / 2);
-      const yPos = (e.clientY - centerY) / (window.innerHeight / 2);
+            // Descobre a porcentagem da posição do mouse (vai de -1 até 1)
+            const xPos = (e.clientX - centerX) / (window.innerWidth / 2);
+            const yPos = (e.clientY - centerY) / (window.innerHeight / 2);
 
-      layers.forEach((layer) => {
-        const speed = layer.getAttribute("data-speed");
-        const xMove = xPos * speed;
-        const yMove = yPos * speed;
+            layers.forEach((layer) => {
+                const speed = layer.getAttribute("data-speed");
+                const xMove = xPos * speed;
+                const yMove = yPos * speed;
 
-        gsap.to(layer, {
-          x: xMove,
-          y: yMove,
-          duration: 0.5,
-          ease: "power2.out",
-        });
-      });
-    };
+                gsap.to(layer, {
+                    x: xMove,
+                    y: yMove,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+            });
+        };
 
-    const handleMouseLeave = () => {
-      if (!containerRef.current) return;
-      const q = gsap.utils.selector(containerRef.current);
+        const handleMouseLeave = () => {
+            if (!containerRef.current) return;
+            const q = gsap.utils.selector(containerRef.current);
 
-      gsap.to(q(".parallax-layer"), {
-        x: 0,
-        y: 0,
-        duration: 0.7,
-        ease: "power3.out",
-      });
-    };
+            gsap.to(q(".parallax-layer"), {
+                x: 0,
+                y: 0,
+                duration: 0.7,
+                ease: "power3.out",
+            });
+        };
 
-    // 1. Adiciona os ouvintes de evento diretamente na janela e no body
-    window.addEventListener("mousemove", handleMouseMove);
-    document.body.addEventListener("mouseleave", handleMouseLeave);
+        // 1. Adiciona os ouvintes de evento diretamente na janela e no body
+        window.addEventListener("mousemove", handleMouseMove);
+        document.body.addEventListener("mouseleave", handleMouseLeave);
 
-    // 2. Função de Limpeza (Cleanup) - Extremamente importante no React!
-    // Remove os eventos quando você mudar de página/componente para não vazar memória.
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      document.body.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []); // O array vazio garante que isso rode apenas uma vez quando o componente montar
+        // 2. Função de Limpeza (Cleanup) - Extremamente importante no React!
+        // Remove os eventos quando você mudar de página/componente para não vazar memória.
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            document.body.removeEventListener("mouseleave", handleMouseLeave);
+        };
+    }, []); // O array vazio garante que isso rode apenas uma vez quando o componente montar
     return (
         <div ref={containerRef}>
             <div className="headerLab text-end">

@@ -188,14 +188,15 @@ font-family: "Iosevka Charon Mono", monospace;
   border: 1px solid;
   width: 80%;
   margin: auto;
-  opacity: 0.5;
+  opacity: 0.3;
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 #containerRepo:hover {
-  background-color: red;
+  background-color: #283618;
+  color: #fefae0;
   cursor: pointer;
+
 }
 
 /* Imagens */
