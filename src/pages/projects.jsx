@@ -61,6 +61,7 @@ export function Projects() {
                             frontText="MOUNTAIN"
                             backTitle="Angular"
                             backText="Good tools make application development quicker and easier to maintain than if you did everything by hand."
+                            className="flip-content-one"
                         />
                     </div>
                 </div>
@@ -75,7 +76,8 @@ export default function FlipCard({
     bgImage,
     frontText,
     backTitle,
-    backText
+    backText,
+    className = ''
 }) {
     const frontRef = useRef(null);
     const backRef = useRef(null);
@@ -129,12 +131,12 @@ export default function FlipCard({
 
     return (
         <div
-            className="flip-container bg-red-500 h-70"
+            className="flip-container h-70"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             <div
-                className="front bg-blue-500 image h-70"
+                className={`front image h-70 ${className}`}
                 ref={frontRef}
                 style={{ backgroundImage: `url(${bgImage})` }}
             >

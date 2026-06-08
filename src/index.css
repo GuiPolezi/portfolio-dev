@@ -136,3 +136,17 @@ font-family: "Iosevka Charon Mono", monospace;
   color: #283618;
   opacity: 0.6;
 }
+
+/* Imagens */
+.image {
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.flip-container {
+  border-radius: 10px;
+}
+
+.flip-content-one {
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
