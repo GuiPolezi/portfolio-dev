@@ -61,3 +61,38 @@ font-family: "Iosevka Charon Mono", monospace;
     font-weight: 500;
     cursor: default;
 }
+
+#infoText {
+  font-family: "Iosevka Charon Mono", monospace;
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+#infoP {
+  font-family: "Inter", sans-serif;
+    cursor: default;
+
+}
+
+#infoA {
+  color: #606c38;
+}
+#infoA:hover {
+  opacity: 0.5;
+}
+
+#topics {
+  font-family: "Iosevka Charon Mono", monospace;
+  font-weight: 300;
+  cursor: default;
+}
+
+#infoTitle {
+  font-family: "Iosevka Charon Mono", monospace;
+  font-weight: 300;
+  color: #283618;
+}
+
+#titleDesc {
+  opacity: 0.7;
+}
