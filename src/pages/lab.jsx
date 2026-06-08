@@ -156,7 +156,7 @@ export function Lab() {
   }, []); // O array vazio garante que isso rode apenas uma vez quando o componente montar
     return (
         <div ref={containerRef}>
-            <div className="headerLab text-start">
+            <div className="headerLab text-end">
                 <h3 id="titleLab" className="text-5xl">Lab</h3>
                 <div id="iconsLab">
                     <i id='iconlabone' class="fa-solid fa-skull-crossbones parallax-layer" data-speed="12"></i>

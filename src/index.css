@@ -145,29 +145,27 @@ font-family: "Iosevka Charon Mono", monospace;
 
 #iconsLab {
   position: relative;
-  width: max-content;
 }
 
 #iconlabone {
   position: absolute;
-  top: -10px;
+  top: -50px;
+  right: 120px;
   font-size: 25px;
-  left: -30px;
    color: #283618;
 }
 
 #iconlabtwo {
   position: absolute;
-  left: 100px;
-  top: -30px;
+  bottom: -40px;
   font-size: 26px;
    color: #283618;
 }
 
 #iconlabthree {
   position: absolute;
-  left: -40px;
   top: -25px;
+  right: 100px;
   opacity: 0.7;
    color: #283618;
 }
