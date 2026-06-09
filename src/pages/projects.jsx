@@ -64,14 +64,16 @@ export function Projects() {
             <div className="headerProjects text-end">
                 <h3 id="titleProject" className="text-5xl">Starred Projects</h3>
                 <div id="stars">
-                    <i id="starone" class="fa-solid fa-star parallax-layer" data-speed="30"></i>
-                    <i id="startwo" class="fa-solid fa-star parallax-layer" data-speed="10"></i>
-                    <i id="starthree" class="fa-solid fa-star parallax-layer" data-speed="8"></i>
+                    <i id="starone" className="fa-solid fa-star parallax-layer" data-speed="30"></i>
+                    <i id="startwo" className="fa-solid fa-star parallax-layer" data-speed="10"></i>
+                    <i id="starthree" className="fa-solid fa-star parallax-layer" data-speed="8"></i>
                 </div>
             </div>
             <div className="content mt-15">
                 <div className="grid grid-cols-2">
                     <div className="col-span-1">
+                        <div className="imageone">
+                        </div>
                         {/*
                          <FlipCard
                             direction="horizontal"
@@ -118,6 +120,9 @@ export function Projects() {
                         </div>
                     </div>
                     <div className="col-span-1">
+                        <div className="imagetwo">
+                           
+                        </div>
                         {/*
                         <FlipCard
                             direction="horizontal"
