@@ -51,9 +51,9 @@ export function Contact() {
 
                         </div>
                         <div className="col-span-2">
-                            <form action="" className="flex flex-col">
-                                <input type="email" placeholder="Mail" className="text-left placeholder-right p-2" required/>
-                                <textarea name="Message" rows={5} placeholder="Your Message" required className="resize-none mt-5 text-left placeholder-right p-2" id=""></textarea>
+                            <form ref={form} onSubmit={sendEmail} className="flex flex-col">
+                                <input type="email" name='name' placeholder="Mail" className="text-left placeholder-right p-2" required/>
+                                <textarea name="message" rows={5} placeholder="Your Message" required className="resize-none mt-5 text-left placeholder-right p-2" id=""></textarea>
                                 <div className="text-center">
                                     <button type="submit" className="mt-4">Send <i className="fa-solid fa-arrow-right"></i></button>
                                 </div>
