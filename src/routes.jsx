@@ -6,6 +6,7 @@ import { Projects } from './pages/projects'
 import { Lab } from './pages/lab'
 import { Skills } from './pages/skills'
 import { Contact } from "./pages/contact"
+import { NotFound } from "./components/error"
 
 export default function AppRoutes() {
     // 1. Pegamos a localização atual da URL
@@ -34,7 +35,7 @@ export default function AppRoutes() {
             <Route path="/lab" element={<Lab />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
-
+            <Route path="*" element={<NotFound />} />
         </Routes>
     )
 }
