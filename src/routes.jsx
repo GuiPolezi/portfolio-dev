@@ -4,6 +4,7 @@ import { Home } from './pages/index'
 import { Info } from './pages/info'
 import { Projects } from './pages/projects'
 import { Lab } from './pages/lab'
+import { Stacks } from './pages/stacks'
 
 export default function AppRoutes() {
     // 1. Pegamos a localização atual da URL
@@ -30,6 +31,7 @@ export default function AppRoutes() {
             <Route path="/info" element={<Info />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/lab" element={<Lab />} />
+            <Route path="/stacks" element={<Stacks />} />
         </Routes>
     )
 }
