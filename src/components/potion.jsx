@@ -10,16 +10,20 @@ const potionData = [
   { id: 'frenzy', label: 'Frenzy', icon: '#enhancement', color: 'hotpink', support: 'orchid' },
 ];
 
+const mainButtonData = {
+  icon: '#potion',
+  color: 'gray',
+  support: 'darkgray'
+};
+
 export default function PotionSelector() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState(potionData[0]);
+  
   const wrapperRef = useRef(null);
   const itemsRef = useRef([]);
   const textRefs = useRef([]);
 
   useEffect(() => {
-    // ATENÇÃO: Raio reduzido de 160 para 90. 
-    // Isso evita que as opções encostem nas bordas do #root e sejam cortadas pelo overflow-x: hidden
     const radius = 90; 
     const angleStep = (Math.PI * 2) / potionData.length;
 
@@ -84,7 +88,10 @@ export default function PotionSelector() {
   }, []);
 
   const handleSelect = (potion) => {
-    setSelected(potion);
+   console.log(`Clicou na poção: ${potion.label}`);
+    
+    // Apenas fecha o menu
+
     setIsOpen(false);
   };
 
@@ -98,12 +105,12 @@ export default function PotionSelector() {
           className={`main-orb ${isOpen ? 'active' : ''}`}
           onClick={() => setIsOpen(!isOpen)}
           style={{
-            '--potion-color': selected.color,
-            '--support-color': selected.support,
+            '--potion-color': mainButtonData.color,
+            '--support-color': mainButtonData.support,
           }}
         >
           <svg className="main-icon" aria-hidden="true">
-            <use href={selected.icon} />
+            <use href={mainButtonData.icon} />
           </svg>
         </button>
 
@@ -113,7 +120,7 @@ export default function PotionSelector() {
             <button
               key={potion.id}
               ref={(el) => (itemsRef.current[i] = el)}
-              className={`option-orb ${selected.id === potion.id ? 'selected' : ''}`}
+              className="option-orb"
               onClick={() => handleSelect(potion)}
               style={{
                 '--potion-color': potion.color,
