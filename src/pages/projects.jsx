@@ -110,7 +110,6 @@ export function Projects() {
                                 <div className="flex gap-5">
                                     <a id="infoA" href="https://github.com/GuiPolezi">Live Demo <i className="fa-solid fa-arrow-right"></i> </a>
                                     <a style={{ color: 'black' }} id="infoA" href="/">GitHub <i className="fa-solid fa-arrow-right"></i> </a>
-
                                 </div>
                             </div>
                             <div className="col-span-1"></div>
