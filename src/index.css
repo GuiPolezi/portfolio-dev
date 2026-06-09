@@ -3,6 +3,8 @@
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
 
+
+
 #root {
   border: 1px solid rgba(128, 128, 128, 0.504);
 
@@ -286,4 +288,120 @@ font-family: "Iosevka Charon Mono", monospace;
 
 .form button:hover {
   color: #283618;
+}
+
+/* Components */
+
+:root {
+  /* Cores mantidas do original */
+  --color-space: #282f44;
+  --color-dark-liver: #453a49;
+  --color-liver: #634570;
+  --color-catawba: #6d3b47;
+  --color-catawba-light: #8c516c;
+  --color-lightest: #fafafa;
+  
+  /* Tamanhos Ajustados para caber no #root */
+  --orb-size: 70px;      /* Antes era 110px */
+  --option-size: 50px;   /* Antes era 80px */
+}
+
+.potion-selector-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botão Central */
+.main-orb {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--orb-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px dashed var(--color-space);
+  background-color: var(--color-dark-liver);
+  cursor: pointer;
+  box-shadow: inset 0 1px 1px #ccc, inset 0 -1px 1px #aaa, 0 2px 4px -3px #666;
+  transition: box-shadow 0.3s ease-out, background-color 0.3s ease-out;
+  padding: 0;
+}
+
+.main-orb:is(:hover, :focus, .active) {
+  background-color: var(--color-liver);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+              rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.main-icon {
+  width: calc(var(--orb-size) / 3);
+  height: calc(var(--orb-size) / 2);
+}
+
+/* Container de Opções Oculto sob o botão principal */
+.options-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 5;
+  overflow: visible;
+}
+
+/* Bolhas de poções menores */
+.option-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Compensa as dimensões para que o (0,0) do GSAP inicie no centro geométrico perfeito */
+  margin-top: calc(var(--option-size) / -2);
+  margin-left: calc(var(--option-size) / -2);
+  width: var(--option-size);
+  aspect-ratio: 1;
+  background: var(--color-catawba);
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: inset 0 1px 1px #ccc, inset 0 -1px 1px #aaa, 0 2px 4px -3px #666;
+  opacity: 0; /* Inicia invisível para o GSAP processar */
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.option-orb.selected {
+  background: var(--color-catawba-light);
+}
+
+.option-orb:is(:hover, :focus, .selected) {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+              rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.option-icon {
+  width: calc(var(--option-size) * 0.375);
+  height: calc(var(--option-size) * 0.625);
+  transform: rotate(20deg);
+  transition: transform 0.15s;
+}
+
+.option-orb:is(:hover, :focus, .selected) .option-icon {
+  transform: rotate(0);
+}
+
+.option-orb span {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  color: var(--color-lightest);
+  opacity: 0;
+  pointer-events: none;
 }

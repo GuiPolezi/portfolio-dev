@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import PotionSelector from '../components/potion'
 
 
 
 export function Stacks() {
     return (
-        <>
+        <div className="h-100 flex justify-center">
             <ParticleBackground />
-            <p>Ola</p>
-        </>
+            <PotionSelector />
+        </div>
     )
 }
 
