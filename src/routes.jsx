@@ -4,7 +4,7 @@ import { Home } from './pages/index'
 import { Info } from './pages/info'
 import { Projects } from './pages/projects'
 import { Lab } from './pages/lab'
-import { Stacks } from './pages/stacks'
+import { Skills } from './pages/skills'
 import { Contact } from "./pages/contact"
 
 export default function AppRoutes() {
@@ -32,7 +32,7 @@ export default function AppRoutes() {
             <Route path="/info" element={<Info />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/lab" element={<Lab />} />
-            <Route path="/stacks" element={<Stacks />} />
+            <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
 
         </Routes>

@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 
 
-export function Stacks() {
+export function Skills() {
     return (
         <>
             <ParticleBackground />
