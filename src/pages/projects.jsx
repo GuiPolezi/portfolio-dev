@@ -72,6 +72,7 @@ export function Projects() {
             <div className="content mt-15">
                 <div className="grid grid-cols-2">
                     <div className="col-span-1">
+                        {/*
                          <FlipCard
                             direction="horizontal"
                             bgImage="images/Jahint.png"
@@ -81,6 +82,7 @@ export function Projects() {
                             backText="Good tools make application development quicker and easier to maintain than if you did everything by hand."
                             className="flip-content-one"
                         />
+                         */}
                     </div>
                     <div className="col-span-1">
                         <div className="grid grid-cols-6">
@@ -116,6 +118,7 @@ export function Projects() {
                         </div>
                     </div>
                     <div className="col-span-1">
+                        {/*
                         <FlipCard
                             direction="horizontal"
                             bgImage="images/myDesk.png"
@@ -125,6 +128,7 @@ export function Projects() {
                             backText="Good tools make application development quicker and easier to maintain than if you did everything by hand."
                             className="flip-content-two"
                         />
+                         */}
                     </div>
                 </div>
             </div>
@@ -132,7 +136,7 @@ export function Projects() {
     )
 }
 
-
+/*
 export default function FlipCard({
     direction = 'horizontal',
     bgImage,
@@ -217,3 +221,4 @@ export default function FlipCard({
         </div>
     );
 }
+    */
