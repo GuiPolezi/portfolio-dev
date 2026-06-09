@@ -26,6 +26,10 @@ Portfólio desenvolvido para apresentar projetos, habilidades técnicas e experi
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=black)
+![EmailJS](https://img.shields.io/badge/EmailJS-FF7043?style=for-the-badge&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ---
@@ -35,10 +39,13 @@ Portfólio desenvolvido para apresentar projetos, habilidades técnicas e experi
 - [x] Página inicial (Home)
 - [x] Listagem de projetos
 - [x] Tema claro / escuro (Dark Mode)
-- [ ] Responsividade completa em todas as áreas
+- [x] Página de Contato com formulário + EmailJS
+- [x] reCAPTCHA no formulário de contato
+- [x] Página LAB (experimentos criativos)
+- [x] Loading screen no `index.html`
 - [ ] Página de Stacks
-- [ ] Página de Contato
-- [ ] Página LAB (experimentos criativos)
+- [ ] Responsividade completa em todas as áreas
+- [ ] Conteúdos reais em todas as páginas
 
 ---
 
@@ -48,9 +55,10 @@ Portfólio desenvolvido para apresentar projetos, habilidades técnicas e experi
 |---|---|---|
 | Home | `/` | ✅ Concluída |
 | Projetos | `/projects` | ✅ Concluída |
+| Contato | `/contact` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
+| LAB | `/lab` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
+| Info | `/info` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
 | Stacks | `/stacks` | 🚧 Em desenvolvimento |
-| Contato | `/contact` | 🚧 Em desenvolvimento |
-| LAB | `/lab` | 🚧 Em desenvolvimento |
 
 ---
 
@@ -72,11 +80,41 @@ npm run dev
 
 Acesse em: `http://localhost:5173`
 
+### Variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto com as seguintes chaves:
+
+```env
+VITE_EMAILJS_SERVICE_ID=seu_service_id
+VITE_EMAILJS_TEMPLATE_ID=seu_template_id
+VITE_EMAILJS_PUBLIC_KEY=sua_public_key
+VITE_RECAPTCHA_SITE_KEY=sua_site_key
+```
+
 ---
 
 ## Roadmap
 
-### 🎯 Em Progresso
+### 🚧 Em Progresso
+
+#### ⚙️ Página de Stacks
+Apresentação visual das tecnologias utilizadas no dia a dia.
+- [ ] Criar layout da página
+- [ ] Organizar stacks por categoria (Frontend, Backend, Ferramentas)
+- [ ] Adicionar ícones e nível de proficiência
+- [ ] Animar entrada dos elementos
+
+#### ✍️ Conteúdo real nas páginas
+Todas as páginas estão com estrutura pronta, mas ainda com dados fictícios ou placeholder.
+- [ ] Home — textos, bio e links reais
+- [ ] Projects — projetos reais com descrição, links e tecnologias
+- [ ] Info — experiências, formação e sobre mim
+- [ ] LAB — projetos experimentais reais com preview
+- [ ] Contact — links de redes sociais reais (GitHub, LinkedIn, Instagram)
+
+---
+
+### 🗓️ Próximas Entregas
 
 #### 📱 Responsividade
 - [ ] Ajustar layout do header para mobile
@@ -88,28 +126,22 @@ Acesse em: `http://localhost:5173`
 - [ ] Revisar contraste de textos no tema escuro
 - [ ] Ajustar cores de cards e superfícies secundárias
 - [ ] Garantir acessibilidade (WCAG AA) no esquema escuro
-- [ ] Testar todos os componentes nos dois temas
 
-### 🗓️ Próximas Entregas
+#### 💅 Polish & Melhorias
+- [ ] Melhorar estilização do loading screen (`#root` no `index.html`) — base implementada, precisa de refinamento visual
+- [ ] Remover animação de **flipcard** da página de Projects
+- [ ] Revisar e padronizar animações GSAP entre páginas
 
-#### 🧪 Página LAB
-Espaço para experimentos criativos, demos interativas e projetos em progresso.
-- [ ] Criar layout da página
-- [ ] Listar projetos experimentais com preview
-- [ ] Adicionar filtros por categoria (animação, UI, algoritmos...)
+---
 
-#### 📬 Página de Contato
-- [ ] Formulário de contato (nome, e-mail, mensagem)
-- [ ] Validação de campos
-- [ ] Integração com serviço de envio de e-mail (ex: EmailJS, Resend)
-- [ ] Feedback visual de envio (sucesso/erro)
-- [ ] Links para redes sociais e GitHub
+### ⚠️ Lembretes de Deploy
 
-#### ⚙️ Página de Stacks
-Apresentação visual das tecnologias que utilizo no dia a dia.
-- [ ] Organizar stacks por categoria (Frontend, Backend, DevOps, Ferramentas)
-- [ ] Adicionar ícones e nível de proficiência
-- [ ] Animar entrada dos cards
+> Antes de publicar o site, lembrar de:
+
+- **reCAPTCHA:** Acessar o [Google reCAPTCHA Console](https://www.google.com/recaptcha/admin), ir em **Domínios** e adicionar:
+  - `localhost` (para desenvolvimento local)
+  - O domínio real do site (ex: `guilhermepolezi.com.br`)
+- Configurar as variáveis de ambiente na plataforma de deploy (Vercel, Netlify, etc.)
 
 ---
 
