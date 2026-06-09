@@ -251,7 +251,22 @@ font-family: "Iosevka Charon Mono", monospace;
   border-radius: 5px;
 }
 
+.form textarea {
+  background-color: rgb(212, 209, 209);
+  border-radius: 5px;
+}
+
 .placeholder-right::placeholder {
   text-align: right;
   color: black;
+}
+
+.form button {
+  cursor: pointer;
+  width: max-content;
+  color: #606c38;
+}
+
+.form button:hover {
+  color: #283618;
 }
