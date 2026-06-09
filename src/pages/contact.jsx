@@ -1,4 +1,29 @@
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 export function Contact() {
+    const form = useRef(null);
+  const [status, setStatus] = useState('');
+
+  const sendEmail = (e) => {
+    e.preventDefault(); // Evita que a página recarregue
+    setStatus('Enviando...');
+
+    // Substitua as strings abaixo pelas suas chaves do EmailJS
+   emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+      form.current, 
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then((result) => {
+          console.log(result.text);
+          setStatus('Mensagem enviada com sucesso! 🚀');
+          form.current.reset(); // Limpa os campos do formulário
+      }, (error) => {
+          console.log(error.text);
+          setStatus('Erro ao enviar a mensagem. Tente novamente. 😢');
+      });
+  };
     return (
         <>
             <div className="circle mt-5"></div>
