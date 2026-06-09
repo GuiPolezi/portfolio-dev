@@ -33,7 +33,7 @@ export default function AppRoutes() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/lab" element={<Lab />} />
             <Route path="/stacks" element={<Stacks />} />
-            <Route path="/contact" element={<Stacks />} />
+            <Route path="/contact" element={<Contact />} />
 
         </Routes>
     )
