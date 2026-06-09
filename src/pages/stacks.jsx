@@ -8,7 +8,6 @@ export function Stacks() {
         <>
             <ParticleBackground />
             <p>Ola</p>
-
         </>
     )
 }
@@ -210,3 +209,4 @@ const ParticleBackground = () => {
 };
 
 export default ParticleBackground;
+
