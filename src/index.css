@@ -362,11 +362,7 @@ font-family: "Iosevka Charon Mono", monospace;
   transition: box-shadow 0.3s, background-color 0.3s;
 }
 
-.option-orb.selected {
-  background: var(--color-catawba-light);
-}
-
-.option-orb:is(:hover, :focus, .selected) {
+.option-orb:is(:hover, :focus) {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
               rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
@@ -378,7 +374,7 @@ font-family: "Iosevka Charon Mono", monospace;
   transition: transform 0.15s;
 }
 
-.option-orb:is(:hover, :focus, .selected) .option-icon {
+.option-orb:is(:hover, :focus) .option-icon {
   transform: rotate(0);
 }
 
