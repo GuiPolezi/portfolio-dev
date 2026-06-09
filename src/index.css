@@ -245,3 +245,13 @@ font-family: "Iosevka Charon Mono", monospace;
 .form h4 {
   font-size: 42px;
 }
+
+.form input {
+  background-color: rgb(212, 209, 209);
+  border-radius: 5px;
+}
+
+.placeholder-right::placeholder {
+  text-align: right;
+  color: black;
+}

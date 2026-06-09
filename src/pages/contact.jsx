@@ -21,9 +21,18 @@ export function Contact() {
                 </div>
                 <div className="col-span-1 text-end">
                     <h4>Contact</h4>
-                    <form action="">
-                        <button type="submit">Send</button>
-                    </form>
+                    <div className="grid mt-5 grid-cols-3">
+                        <div className="col-span-1">
+
+                        </div>
+                        <div className="col-span-2">
+                            <form action="" className="flex flex-col">
+                                <input type="email" placeholder="Mail" className="text-left placeholder-right p-2" required/>
+                            
+                                <button type="submit">Send <i className="fa-solid fa-arrow-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
