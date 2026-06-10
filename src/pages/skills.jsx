@@ -1,15 +1,83 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 
 
 
 export function Skills() {
+     const containerRef = useRef(null);
+
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            if (!containerRef.current) return;
+
+            // Restringe a busca das camadas apenas para dentro de Projects
+            const q = gsap.utils.selector(containerRef.current);
+            const layers = q(".parallax-layer");
+
+            // Como estamos rastreando a tela toda, usamos o tamanho da JANELA (window)
+            // em vez do getBoundingClientRect() do container.
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+
+            // Descobre a porcentagem da posição do mouse (vai de -1 até 1)
+            const xPos = (e.clientX - centerX) / (window.innerWidth / 2);
+            const yPos = (e.clientY - centerY) / (window.innerHeight / 2);
+
+            layers.forEach((layer) => {
+                const speed = layer.getAttribute("data-speed");
+                const xMove = xPos * speed;
+                const yMove = yPos * speed;
+
+                gsap.to(layer, {
+                    x: xMove,
+                    y: yMove,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+            });
+        };
+
+        const handleMouseLeave = () => {
+            if (!containerRef.current) return;
+            const q = gsap.utils.selector(containerRef.current);
+
+            gsap.to(q(".parallax-layer"), {
+                x: 0,
+                y: 0,
+                duration: 0.7,
+                ease: "power3.out",
+            });
+        };
+
+        // 1. Adiciona os ouvintes de evento diretamente na janela e no body
+        window.addEventListener("mousemove", handleMouseMove);
+        document.body.addEventListener("mouseleave", handleMouseLeave);
+
+        // 2. Função de Limpeza (Cleanup) - Extremamente importante no React!
+        // Remove os eventos quando você mudar de página/componente para não vazar memória.
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            document.body.removeEventListener("mouseleave", handleMouseLeave);
+        };
+    }, []); // O array vazio garante que isso rode apenas uma vez quando o componente montar
     return (
-        <>
+        <div className="skillsContainer" ref={containerRef}>
             <ParticleBackground />
-            <p>Ola</p>
-        </>
+            <div className="headerSkills mt-5 text-center">
+                <div id="skills">
+                   <i id="cubes" className="fa-solid fa-cubes parallax-layer" data-speed="20"></i>
+                </div>
+                <h3 id="titleSkills" className="text-5xl">Skills</h3>
+            </div>
+            <p className="skillText" id="one">HTML</p>
+            <p className="skillText" id="two">Tailwind - Css</p>
+            <p className="skillText" id="three">Node</p>
+            <p className="skillText" id="four">C#</p>
+            <p className="skillText" id="five">React</p>
+            <p className="skillText" id="six">Prompt Engineering</p>
+            <p className="skillText" id="seven">Java</p>
+        </div>
     )
 }
 

@@ -70,27 +70,7 @@ const GithubReposWidget = ({ username }) => {
                     </a>
                 ))}
             </div>
-            {/*
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px' }}>
-                {repos.map(repo => (
-                    <div key={repo.id} style={cardStyle}>
-                        <h4 style={{ margin: '0 0 8px 0' }}>
-                            <a href={repo.html_url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#0366d6' }}>
-                                {repo.name}
-                            </a>
-                        </h4>
-                        <p style={{ fontSize: '14px', color: '#586069', margin: '0 0 16px 0' }}>
-                            {repo.description || 'Nenhuma descrição fornecida.'}
-                        </p>
-                        <div style={{ fontSize: '12px', color: '#586069', display: 'flex', gap: '15px' }}>
-                            <span>⭐ {repo.stargazers_count}</span>
-                            <span>🍴 {repo.forks_count}</span>
-                            {repo.language && <span>💻 {repo.language}</span>}
-                        </div>
-                    </div>
-                ))}
-            </div>
-                            */}
+
         </>
     );
 };

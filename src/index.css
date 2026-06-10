@@ -279,4 +279,65 @@ font-family: "Iosevka Charon Mono", monospace;
 
 
 
-/* Stack Page */
+/* Skills Page */
+#titleSkills {
+    font-family: "Iosevka Charon Mono", monospace;
+  font-weight: 300;
+}
+
+
+.skillsContainer {
+  position: relative;
+  height: 100%;
+}
+
+.skillText {
+  position: absolute;
+      font-family: "Iosevka Charon Mono", monospace;
+  font-weight: bolder;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#one {
+  left: 150px;
+}
+
+#two {
+  top: 50px;
+  right: 0;
+}
+
+#three {
+  top: 180px;
+  left: 280px;
+}
+
+#four {
+  right: 200px;
+  top: 130px;
+}
+
+#five {
+  bottom: 100px;
+  left: -50px;
+}
+
+#six {
+  bottom: 0;
+  left: 37vw;
+}
+
+#seven {
+  bottom: 100px;
+  right: 120px;
+}
+
+.skillText:hover {
+  opacity: 0.5;
+}
+
+#cubes {
+  font-size: 26px;
+  color: #606c38;
+}
