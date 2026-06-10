@@ -85,10 +85,11 @@ font-family: "Iosevka Charon Mono", monospace;
     cursor: default;
 
 }
-
+/*
 #infoA {
   color: #606c38;
 }
+  */
 #infoA:hover {
   opacity: 0.5;
 }

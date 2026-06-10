@@ -84,7 +84,7 @@ export function Projects() {
                                 <p className="text-justify mb-25" style={{ opacity: '0.5' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ultrices elementum. Fusce id urna sed tortor malesuada pulvinar vitae tristique mi.</p>
                                 <div className="flex gap-5">
                                     <a id="infoA" href="https://github.com/GuiPolezi">Live Demo <i className="fa-solid fa-arrow-right"></i> </a>
-                                    <a style={{ color: 'black' }} id="infoA" href="/">GitHub <i className="fa-solid fa-arrow-right"></i> </a>
+                                    <a className="text-black dark:text-white" id="infoA" href="/">GitHub <i className="fa-solid fa-arrow-right"></i> </a>
 
                                 </div>
                             </div>
