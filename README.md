@@ -97,6 +97,12 @@ VITE_RECAPTCHA_SITE_KEY=sua_site_key
 
 ### 🚧 Em Progresso
 
+#### 📱 Responsividade
+- [ ] Ajustar layout do header para mobile
+- [ ] Adaptar grid de projetos para telas menores
+- [ ] Revisar tipografia e espaçamentos em breakpoints menores
+- [ ] Testar e corrigir em dispositivos iOS e Android
+
 #### ✍️ Conteúdo real nas páginas
 Todas as páginas estão com estrutura pronta, mas ainda com dados fictícios ou placeholder.
 - [ ] Home — textos, bio e links reais
@@ -104,21 +110,6 @@ Todas as páginas estão com estrutura pronta, mas ainda com dados fictícios ou
 - [ ] Info — experiências, formação e sobre mim
 - [ ] LAB — projetos experimentais reais com preview
 - [ ] Contact — links de redes sociais reais (GitHub, LinkedIn, Instagram)
-
----
-
-### 🗓️ Próximas Entregas
-
-#### 📱 Responsividade
-- [ ] Ajustar layout do header para mobile
-- [ ] Adaptar grid de projetos para telas menores
-- [ ] Revisar tipografia e espaçamentos em breakpoints menores
-- [ ] Testar e corrigir em dispositivos iOS e Android
-
-#### 🌑 Dark Mode
-- [ ] Revisar contraste de textos no tema escuro
-- [ ] Ajustar cores de cards e superfícies secundárias
-- [ ] Garantir acessibilidade (WCAG AA) no esquema escuro
 
 ---
 
