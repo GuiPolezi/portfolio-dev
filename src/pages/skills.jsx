@@ -70,14 +70,32 @@ export function Skills() {
                 </div>
                 <h3 id="titleSkills" className="text-5xl">Skills</h3>
             </div>
-            <i class="fa-brands fa-html5"></i>
-            <p className="skillText" id="one">HTML</p>
-            <p className="skillText" id="two">Tailwind - Css</p>
-            <p className="skillText" id="three">Node</p>
-            <p className="skillText" id="four">C#</p>
-            <p className="skillText" id="five">React</p>
-            <p className="skillText" id="six">Prompt Engineering</p>
-            <p className="skillText" id="seven">Java</p>
+            <div id="one" className="skillBox">
+                <i class="fa-brands fa-html5"></i>
+                <p>HTML</p>
+
+            </div>
+            <div id="two" className="skillBox">
+                <i class="fa-brands fa-tailwind-css"></i>
+                <p>Tailwind - Css</p>
+            </div>
+            <div id="three" className="skillBox">
+                <i class="fa-brands fa-node"></i>
+                <p>Node</p>
+            </div>
+            <div id="four" className="skillBox">
+                <i class="fa-solid fa-c">#</i>
+                <p>C#</p>
+            </div>
+            <div id="five" className="skillBox">
+                <p>React</p>
+            </div>
+            <div id="six" className="skillBox">
+                <p>Prompt Engineering</p>
+            </div>
+            <div id="seven" className="skillBox">
+                <p>Java</p>
+            </div>
         </div>
     )
 }
