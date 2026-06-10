@@ -65,7 +65,13 @@ export function Skills() {
 
     // Efeito revelação do icone skillbox
     const iconRef = useRef(null);
-
+    const iconRefTwo = useRef(null);
+    const iconRefThree = useRef(null);
+    const iconRefFour = useRef(null);
+    const iconRefFive = useRef(null);
+    const iconRefSix = useRef(null);
+    const iconRefSeven = useRef(null);
+    
     // Função disparada ao passar o mouse sobre o <p>
     const handleMouseEnter = () => {
         gsap.to(iconRef.current, {
@@ -95,36 +101,13 @@ export function Skills() {
                 </div>
                 <h3 id="titleSkills" className="text-5xl">Skills</h3>
             </div>
-            <div id="one" className="skillBox">
-                <i class="fa-brands fa-html5" ref={iconRef}></i>
-                <p onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeaveP}>HTML</p>
-
-            </div>
-            <div id="two" className="skillBox">
-                <i className="fa-brands fa-css3-alt"></i>
-                <p>Tailwind - Css</p>
-            </div>
-            <div id="three" className="skillBox">
-                <i className="fa-brands fa-node"></i>
-                <p>Node</p>
-            </div>
-            <div id="four" className="skillBox">
-                <i className="fa-solid fa-c">#</i>
-                <p>C#</p>
-            </div>
-            <div id="five" className="skillBox">
-                <i className="fa-brands fa-react"></i>
-                <p>React</p>
-            </div>
-            <div id="six" className="skillBox">
-                <i className="fa-solid fa-robot"></i>
-                <p>Prompt Engineering</p>
-            </div>
-            <div id="seven" className="skillBox">
-                <i className="fa-brands fa-java"></i>
-                <p>Java</p>
-            </div>
+            <SkillItem id="one" iconClass="fa-brands fa-html5" label="HTML" />
+            <SkillItem id="two" iconClass="fa-brands fa-css3-alt" label="Tailwind - Css" />
+            <SkillItem id="three" iconClass="fa-brands fa-node" label="Node" />
+            <SkillItem id="four" iconClass="fa-solid fa-c" label="C#" />
+            <SkillItem id="five" iconClass="fa-brands fa-react" label="React" />
+            <SkillItem id="six" iconClass="fa-solid fa-robot" label="Prompt Engineering" />
+            <SkillItem id="seven" iconClass="fa-brands fa-java" label="Java" />
         </div>
     )
 }
@@ -327,3 +310,37 @@ const ParticleBackground = () => {
 
 export default ParticleBackground;
 
+
+const SkillItem = ({ id, iconClass, label }) => {
+    const iconRef = useRef(null);
+
+    const handleMouseEnter = () => {
+        gsap.to(iconRef.current, {
+            duration: 0.3,
+            autoAlpha: 1,
+            y: 0,
+            ease: 'power2.out'
+        });
+    };
+
+    const handleMouseLeaveP = () => {
+        gsap.to(iconRef.current, {
+            duration: 0.3,
+            autoAlpha: 0,
+            y: 10,
+            ease: 'power2.in'
+        });
+    };
+
+    return (
+        <div id={id} className="skillBox">
+            <i className={iconClass} ref={iconRef}></i>
+            <p 
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeaveP}
+            >
+                {label}
+            </p>
+        </div>
+    );
+};
