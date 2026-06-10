@@ -303,6 +303,9 @@ font-family: "Iosevka Charon Mono", monospace;
 
 .skillBox i {
   font-size: 32px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 #one {
@@ -339,7 +342,7 @@ font-family: "Iosevka Charon Mono", monospace;
   right: 120px;
 }
 
-.skillText:hover {
+.skillBox p:hover {
   opacity: 0.5;
 }
 

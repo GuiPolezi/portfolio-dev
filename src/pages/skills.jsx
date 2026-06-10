@@ -5,7 +5,7 @@ import gsap from "gsap";
 
 
 export function Skills() {
-     const containerRef = useRef(null);
+    const containerRef = useRef(null);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -61,42 +61,68 @@ export function Skills() {
             document.body.removeEventListener("mouseleave", handleMouseLeave);
         };
     }, []); // O array vazio garante que isso rode apenas uma vez quando o componente montar
+
+
+    // Efeito revelação do icone skillbox
+    const iconRef = useRef(null);
+
+    // Função disparada ao passar o mouse sobre o <p>
+    const handleMouseEnter = () => {
+        gsap.to(iconRef.current, {
+            duration: 0.3,
+            autoAlpha: 1,
+            y: 0,                    // (Opcional) Faz o ícone deslizar um pouco para cima
+            ease: 'power2.out'
+        });
+    };
+
+    // Função disparada ao tirar o mouse do <p>
+    const handleMouseLeaveP = () => {
+        gsap.to(iconRef.current, {
+            duration: 0.3,
+            autoAlpha: 0,
+            y: 10,                   // (Opcional) Faz o ícone descer um pouco ao sumir
+            ease: 'power2.in'
+        });
+    };
+
     return (
         <div className="skillsContainer" ref={containerRef}>
             <ParticleBackground />
             <div className="headerSkills mt-5 text-center">
                 <div id="skills">
-                   <i id="cubes" className="fa-solid fa-cubes parallax-layer" data-speed="20"></i>
+                    <i id="cubes" className="fa-solid fa-cubes parallax-layer" data-speed="20"></i>
                 </div>
                 <h3 id="titleSkills" className="text-5xl">Skills</h3>
             </div>
-            <div id="one" className="skillBox">
-                <i class="fa-brands fa-html5"></i>
+            <div id="one" onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeaveP} className="skillBox">
+                <i class="fa-brands fa-html5" ref={iconRef}></i>
                 <p>HTML</p>
 
             </div>
             <div id="two" className="skillBox">
-                <i class="fa-brands fa-css3-alt"></i>
+                <i className="fa-brands fa-css3-alt"></i>
                 <p>Tailwind - Css</p>
             </div>
             <div id="three" className="skillBox">
-                <i class="fa-brands fa-node"></i>
+                <i className="fa-brands fa-node"></i>
                 <p>Node</p>
             </div>
             <div id="four" className="skillBox">
-                <i class="fa-solid fa-c">#</i>
+                <i className="fa-solid fa-c">#</i>
                 <p>C#</p>
             </div>
             <div id="five" className="skillBox">
-                <i class="fa-brands fa-react"></i>
+                <i className="fa-brands fa-react"></i>
                 <p>React</p>
             </div>
             <div id="six" className="skillBox">
-                <i class="fa-solid fa-robot"></i>
+                <i className="fa-solid fa-robot"></i>
                 <p>Prompt Engineering</p>
             </div>
             <div id="seven" className="skillBox">
-                <i class="fa-brands fa-java"></i>
+                <i className="fa-brands fa-java"></i>
                 <p>Java</p>
             </div>
         </div>
