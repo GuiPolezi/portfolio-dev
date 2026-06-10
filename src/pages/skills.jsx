@@ -313,7 +313,48 @@ export default ParticleBackground;
 
 const SkillItem = ({ id, iconClass, label }) => {
     const iconRef = useRef(null);
+    const labelRef = useRef(null); // 1. Nova ref para o parágrafo
 
+    // Efeito para a animação contínua de flutuação (balão)
+    useEffect(() => {
+        // Para garantir que a animação seja diferente para cada item,
+        // vamos usar valores aleatórios pequenos para duração e delay.
+        const randomDurationY = 3 + Math.random() * 2; // Entre 3 e 5 segundos
+        const randomDurationX = 2 + Math.random() * 2; // Entre 2 e 4 segundos
+        const randomDelay = Math.random() * 2;       // Até 2 segundos de delay inicial
+
+        // Animação Vertical (Sobe e Desce sutil)
+        gsap.to(labelRef.current, {
+            y: "-=10px", // Move 10px para cima da posição original
+            duration: randomDurationY,
+            ease: "sine.inOut", // Movimento suave nas bordas
+            repeat: -1,         // Loop infinito
+            yoyo: true,         // Retorna à posição original ao invés de pular
+            delay: randomDelay,  // Desincroniza os balões
+        });
+
+        // Animação Horizontal (Lado a Lado sutil para aleatoriedade)
+        gsap.to(labelRef.current, {
+            x: "-=5px", // Move 5px para a esquerda
+            duration: randomDurationX,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+            delay: randomDelay * 0.5, // Desincroniza ainda mais do eixo Y
+        });
+        
+        // OPCIONAL: Adicionar uma rotação leve para dar mais "vida"
+        gsap.to(labelRef.current, {
+            rotation: Math.random() > 0.5 ? 2 : -2, // Rotaciona 2 graus pra direita ou esquerda
+            duration: randomDurationY * 1.2,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+        });
+
+    }, []); // Roda apenas uma vez na montagem
+
+    // --- Suas funções de Hover do Ícone continuam iguais ---
     const handleMouseEnter = () => {
         gsap.to(iconRef.current, {
             duration: 0.3,
@@ -331,13 +372,20 @@ const SkillItem = ({ id, iconClass, label }) => {
             ease: 'power2.in'
         });
     };
+    // -----------------------------------------------------
 
     return (
-        <div id={id} className="skillBox">
+        <div id={id} className="skillBox" style={{ perspective: "1000px" }}> {/* Perspective ajuda na rotação leve */}
             <i className={iconClass} ref={iconRef}></i>
             <p 
+                ref={labelRef} // 1. Atribui a ref aqui
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeaveP}
+                style={{ 
+                    
+                    cursor: 'pointer',
+                    position: 'relative' // Garante que z-index e transforms funcionem isolados
+                }}
             >
                 {label}
             </p>

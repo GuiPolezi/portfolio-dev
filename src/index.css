@@ -301,7 +301,7 @@ font-family: "Iosevka Charon Mono", monospace;
 }
 
 .skillBox i {
-  font-size: 32px;
+  font-size: 46px;
   visibility: hidden;
   opacity: 0;
   transform: translateY(10px);
@@ -309,6 +309,27 @@ font-family: "Iosevka Charon Mono", monospace;
 
 .skillBox p {
   cursor: pointer;
+  padding-bottom: 4px;
+  
+}
+
+.skillBox p::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #606c38; /* Cor do sublinhado (ex: azul claro) */
+  transform: scaleX(0); /* Esconde a linha achatando ela no eixo X */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+/* Faz a linha crescer ao passar o mouse */
+.skillBox p:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 #one {
