@@ -70,6 +70,7 @@ export function Skills() {
                 </div>
                 <h3 id="titleSkills" className="text-5xl">Skills</h3>
             </div>
+            <i class="fa-brands fa-html5"></i>
             <p className="skillText" id="one">HTML</p>
             <p className="skillText" id="two">Tailwind - Css</p>
             <p className="skillText" id="three">Node</p>
