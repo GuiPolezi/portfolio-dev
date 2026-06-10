@@ -43,7 +43,7 @@ Portfólio desenvolvido para apresentar projetos, habilidades técnicas e experi
 - [x] reCAPTCHA no formulário de contato
 - [x] Página LAB (experimentos criativos)
 - [x] Loading screen no `index.html`
-- [ ] Página de Stacks
+- [x] Página de Skills
 - [ ] Responsividade completa em todas as áreas
 - [ ] Conteúdos reais em todas as páginas
 
@@ -58,7 +58,7 @@ Portfólio desenvolvido para apresentar projetos, habilidades técnicas e experi
 | Contato | `/contact` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
 | LAB | `/lab` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
 | Info | `/info` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
-| Stacks | `/stacks` | 🚧 Em desenvolvimento |
+| Skills | `/skills` | ✅ Concluída |
 
 ---
 
@@ -97,13 +97,6 @@ VITE_RECAPTCHA_SITE_KEY=sua_site_key
 
 ### 🚧 Em Progresso
 
-#### ⚙️ Página de Stacks
-Apresentação visual das tecnologias utilizadas no dia a dia.
-- [ ] Criar layout da página
-- [ ] Organizar stacks por categoria (Frontend, Backend, Ferramentas)
-- [ ] Adicionar ícones e nível de proficiência
-- [ ] Animar entrada dos elementos
-
 #### ✍️ Conteúdo real nas páginas
 Todas as páginas estão com estrutura pronta, mas ainda com dados fictícios ou placeholder.
 - [ ] Home — textos, bio e links reais
@@ -126,11 +119,6 @@ Todas as páginas estão com estrutura pronta, mas ainda com dados fictícios ou
 - [ ] Revisar contraste de textos no tema escuro
 - [ ] Ajustar cores de cards e superfícies secundárias
 - [ ] Garantir acessibilidade (WCAG AA) no esquema escuro
-
-#### 💅 Polish & Melhorias
-- [ ] Melhorar estilização do loading screen (`#root` no `index.html`) — base implementada, precisa de refinamento visual
-- [ ] Remover animação de **flipcard** da página de Projects
-- [ ] Revisar e padronizar animações GSAP entre páginas
 
 ---
 
