@@ -76,7 +76,7 @@ export function Skills() {
 
             </div>
             <div id="two" className="skillBox">
-                <i class="fa-brands fa-tailwind-css"></i>
+                <i class="fa-brands fa-css3-alt"></i>
                 <p>Tailwind - Css</p>
             </div>
             <div id="three" className="skillBox">
@@ -88,12 +88,15 @@ export function Skills() {
                 <p>C#</p>
             </div>
             <div id="five" className="skillBox">
+                <i class="fa-brands fa-react"></i>
                 <p>React</p>
             </div>
             <div id="six" className="skillBox">
+                <i class="fa-solid fa-robot"></i>
                 <p>Prompt Engineering</p>
             </div>
             <div id="seven" className="skillBox">
+                <i class="fa-brands fa-java"></i>
                 <p>Java</p>
             </div>
         </div>
