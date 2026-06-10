@@ -298,7 +298,6 @@ font-family: "Iosevka Charon Mono", monospace;
   font-family: "Iosevka Charon Mono", monospace;
   font-weight: bolder;
   font-size: 20px;
-  cursor: pointer;
 }
 
 .skillBox i {
@@ -306,6 +305,10 @@ font-family: "Iosevka Charon Mono", monospace;
   visibility: hidden;
   opacity: 0;
   transform: translateY(10px);
+}
+
+.skillBox p {
+  cursor: pointer;
 }
 
 #one {

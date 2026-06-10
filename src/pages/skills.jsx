@@ -95,10 +95,10 @@ export function Skills() {
                 </div>
                 <h3 id="titleSkills" className="text-5xl">Skills</h3>
             </div>
-            <div id="one" onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeaveP} className="skillBox">
+            <div id="one" className="skillBox">
                 <i class="fa-brands fa-html5" ref={iconRef}></i>
-                <p>HTML</p>
+                <p onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeaveP}>HTML</p>
 
             </div>
             <div id="two" className="skillBox">
