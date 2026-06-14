@@ -180,13 +180,13 @@ font-family: "Iosevka Charon Mono", monospace;
 
 #titleRepo {
   font-weight: 600;
-  font-size: 42px
+ /* font-size: 42px*/
 }
-
+/*
 #repoDiv p {
   font-size: 20px;
 }
-
+*/
 .line {
   border: 1px solid;
   width: 80%;

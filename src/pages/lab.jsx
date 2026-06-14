@@ -51,7 +51,7 @@ const GithubReposWidget = ({ username }) => {
                     <a key={repo.id} href={repo.html_url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <div id='containerRepo' className='p-5'>
                             <div className='flex items-center gap-4'>
-                                <span id='titleRepo'>{repo.name}</span>
+                                <span id='titleRepo' className='text-md md:text-2xl'>{repo.name}</span>
                                 <span style={{
                                     fontSize: '11px',
                                     color: '#586069',
