@@ -37,11 +37,13 @@ export function Contact() {
     };
     return (
         <>
-            <div className="grid grid-cols-4">
-                <div className="col-span-1">
-                    <div className="circle mt-5"></div>
-                    <div className="contactLinks p-2">
-                        <ul>
+            <div className="grid grid-cols-1 gap-10 px-4 py-2 md:grid-cols-4 md:gap-0 md:px-0 md:py-0">
+
+                {/* Sidebar de links */}
+                <div className="col-span-1 flex flex-col items-center md:items-start">
+                    <div className="circle mt-0 md:mt-5"></div>
+                    <div className="contactLinks p-2 text-base sm:text-lg md:text-xl">
+                        <ul className="flex gap-6 md:flex-col md:gap-0">
                             <li>
                                 <a href="/">Github</a>
                             </li>
@@ -54,33 +56,54 @@ export function Contact() {
                         </ul>
                     </div>
                 </div>
-                <div className="col-span-3 mt-12">
-                    <div className="grid grid-cols-2 form">
-                        <div className="col-span-1">
 
-                        </div>
-                        <div className="col-span-1 text-end">
-                            <h4>Contact</h4>
-                            <div className="grid mt-2 grid-cols-3">
-                                <div className="col-span-1">
+                {/* Área do formulário */}
+                <div className="col-span-1 md:col-span-3 md:mt-12">
+                    <div className="form grid grid-cols-1 md:grid-cols-2">
 
-                                </div>
-                                <div className="col-span-2">
+                        {/* Coluna vazia no desktop, ocultada no mobile */}
+                        <div className="hidden md:col-span-1 md:block"></div>
+
+                        <div className="col-span-1 text-center md:text-end">
+                            <h4 className="text-3xl sm:text-4xl md:text-5xl">Contact</h4>
+
+                            <div className="grid mt-2 grid-cols-1 md:grid-cols-3">
+
+                                {/* Coluna vazia no desktop, ocultada no mobile */}
+                                <div className="hidden md:col-span-1 md:block"></div>
+
+                                <div className="col-span-1 md:col-span-2">
                                     <form ref={form} onSubmit={sendEmail} className="flex flex-col">
-                                        <input type="email" name='name' placeholder="Mail" className="text-left placeholder-right p-2" required />
+                                        <input
+                                            type="email"
+                                            name='name'
+                                            placeholder="Mail"
+                                            className="text-left placeholder-right p-2"
+                                            required
+                                        />
 
-                                        <textarea name="message" rows={5} placeholder="Your Message" required className="resize-none mt-5 text-left placeholder-right p-2" id=""></textarea>
-                                        <div className="mt-2 flex justify-center scale-[0.60] origin-center">
+                                        <textarea
+                                            name="message"
+                                            rows={5}
+                                            placeholder="Your Message"
+                                            required
+                                            className="resize-none mt-5 text-left placeholder-right p-2"
+                                        ></textarea>
+
+                                        <div className="mt-2 flex justify-center scale-[0.60] origin-center md:scale-75">
                                             <ReCAPTCHA
                                                 ref={recaptchaRef}
                                                 sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                                                 onChange={(token) => setCaptchaToken(token)}
-                                            
                                             />
                                         </div>
+
                                         <div className="text-center">
-                                            <button type="submit" className="mt-2">Send <i className="fa-solid fa-arrow-right"></i></button>
+                                            <button type="submit" className="mt-2">
+                                                Send <i className="fa-solid fa-arrow-right"></i>
+                                            </button>
                                         </div>
+
                                         {status && (
                                             <p className={`mt-3 text-sm ${status.includes('sucesso') ? 'text-green-400' : status.includes('Erro') ? 'text-red-400' : 'text-gray-400'}`}>
                                                 {status}
@@ -93,7 +116,6 @@ export function Contact() {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
