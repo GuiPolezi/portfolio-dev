@@ -114,11 +114,8 @@ export function Projects() {
                                 </p>
 
                                 <div className="flex gap-5 text-sm md:text-base">
-                                    <a id="infoA" href="https://github.com/GuiPolezi">
+                                    <a id="infoA" href="https://beta-jahint-838ce4c060347c7b932e.o2.myshopify.dev/" target="_blank">
                                         Live Demo <i className="fa-solid fa-arrow-right ml-1"></i>
-                                    </a>
-                                    <a className="text-black dark:text-white" id="infoA" href="/">
-                                        GitHub <i className="fa-solid fa-arrow-right ml-1"></i>
                                     </a>
                                 </div>
 
@@ -144,10 +141,10 @@ export function Projects() {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ultrices elementum. Fusce id urna sed tortor malesuada pulvinar vitae tristique mi.
                                 </p>
                                 <div className="flex gap-5 text-sm md:text-base">
-                                    <a id="infoA" href="https://github.com/GuiPolezi">
+                                    <a id="infoA" href="https://my-desktop-gold.vercel.app/" target="_blank">
                                         Live Demo <i className="fa-solid fa-arrow-right ml-1"></i>
                                     </a>
-                                    <a className="text-black dark:text-white" id="infoA" href="/">
+                                    <a className="text-black dark:text-white" id="infoA" href="https://github.com/GuiPolezi/MyDesktop" target="_blank">
                                         GitHub <i className="fa-solid fa-arrow-right ml-1"></i>
                                     </a>
                                 </div>

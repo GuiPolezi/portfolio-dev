@@ -45,13 +45,13 @@ export function Contact() {
                     <div className="contactLinks p-2 text-base sm:text-lg md:text-xl">
                         <ul className="flex gap-6 md:flex-col md:gap-0">
                             <li>
-                                <a href="https://github.com/GuiPolezi">Github</a>
+                                <a href="https://github.com/GuiPolezi" target='_blank'>Github</a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/guilherme-polezi-machado/">Linkedin</a>
+                                <a href="https://www.linkedin.com/in/guilherme-polezi-machado/" target='_blank'>Linkedin</a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/GuiPolezi">Instagram</a>
+                                <a href="https://www.instagram.com/GuiPolezi" target='_blank'>Instagram</a>
                             </li>
                         </ul>
                     </div>
