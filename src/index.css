@@ -37,14 +37,14 @@
   font-weight: 800;
   font-style: normal;
 }
-
+/*
 #glitch-wrapper {
   position: absolute;
   z-index: 3;
   top: 90px;
   left: 5px;
 }
-
+*/
 /* MENU */
 .menu-wrapper { position: relative; }
 .dropdown {
