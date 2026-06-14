@@ -93,7 +93,7 @@ export function Skills() {
     };
 
     return (
-        <div className="skillsContainer" ref={containerRef}>
+        <div className="skillsContainer relative flex flex-col items-center gap-12 px-4 py-12 md:block md:min-h-[600px] md:px-0" ref={containerRef}>
             <ParticleBackground />
             <div className="headerSkills mt-5 text-center">
                 <div id="skills">
@@ -310,6 +310,15 @@ const ParticleBackground = () => {
 
 export default ParticleBackground;
 
+const skillPositions = {
+  one:   "md:absolute md:left-[150px]",
+  two:   "md:absolute md:top-[50px] md:right-0",
+  three: "md:absolute md:top-[180px] md:left-[280px]",
+  four:  "md:absolute md:right-[200px] md:top-[130px]",
+  five:  "md:absolute md:bottom-[260px] md:left-[-50px]",
+  six:   "md:absolute md:bottom-[200px] md:left-[17vw]",
+  seven: "md:absolute md:bottom-[200px] md:right-[120px]",
+};
 
 const SkillItem = ({ id, iconClass, label }) => {
     const iconRef = useRef(null);
@@ -375,20 +384,23 @@ const SkillItem = ({ id, iconClass, label }) => {
     // -----------------------------------------------------
 
     return (
-        <div id={id} className="skillBox" style={{ perspective: "1000px" }}> {/* Perspective ajuda na rotação leve */}
-            <i className={iconClass} ref={iconRef}></i>
-            <p 
-                ref={labelRef} // 1. Atribui a ref aqui
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeaveP}
-                style={{ 
-                    
-                    cursor: 'pointer',
-                    position: 'relative' // Garante que z-index e transforms funcionem isolados
-                }}
-            >
-                {label}
-            </p>
-        </div>
-    );
+    <div
+      id={id}
+      className={`skillBox flex flex-col items-center text-center font-mono font-bold text-base sm:text-lg md:text-xl ${skillPositions[id]}`}
+      style={{ perspective: "1000px" }}
+    >
+      <i
+        className={`${iconClass} text-3xl md:text-4xl lg:text-5xl`}
+        ref={iconRef}
+      ></i>
+      <p
+        ref={labelRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeaveP}
+        className="cursor-pointer relative pb-1"
+      >
+        {label}
+      </p>
+    </div>
+  );
 };
