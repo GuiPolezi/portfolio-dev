@@ -14,7 +14,7 @@ export function Info() {
                     <a id="infoA" className="text-xs" href="#">Download <i class="fa-solid fa-arrow-right"></i> </a>
                 </div>
                 <div id="topics" className="col-span-2 md:col-span-1 text-end flex md:block mt-3 md:mt-0">
-                    <div className="bg-blue-200 text-start md:text-end">
+                    <div className="text-start md:text-end">
 
                         <p className="text-sm md:text-2xl lg:text-5xl mb-0 lg:mb-5" id="infoTitle">Front-End Developer</p>
                         <div className="grid grid-cols-1 md:grid-cols-3">
