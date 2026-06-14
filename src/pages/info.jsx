@@ -5,7 +5,7 @@ export function Info() {
                 <div className="col-span-2 md:col-span-1">
                     <h3 id="infoText" className="mb-2">Info</h3>
                     <p className="font-bold text-justify mb-2 md:mb-10 text-[10px] md:text-xs lg:text-md" id="infoP">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum semper erat, quis aliquam urna maximus rutrum. Integer eget pulvinar sem, ac pretium dui. Suspendisse commodo fringilla arcu in finibus. Sed eros nulla, rutrum vel vehicula ac, lacinia nec nulla. Pellentesque fringilla tempus ornare.
+                        Busco me tornar um Artista e Desenvolvedor Independente.  
                     </p>
                     <p className="font-bold text-justify mb-2 lg:mb-10 text-[10px] md:text-xs lg:text-md" id="infoP">
                         Morbi nec ultrices est. Pellentesque ligula urna, elementum commodo urna sed, interdum faucibus est. Pellentesque a ante eu diam malesuada tincidunt nec id eros. Aliquam eros arcu, tempor quis leo vitae, posuere rhoncus turpis. Curabitur elementum leo eget massa elementum, vel laoreet massa blandit. Aenean mattis vulputate auctor. Sed non ipsum congue, sollicitudin mauris et, porta magna. Suspendisse in urna at purus porta luctus sed at sapien. Curabitur scelerisque imperdiet elit et ultricies.

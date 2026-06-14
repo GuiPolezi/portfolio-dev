@@ -12,7 +12,20 @@ export function Home() {
                 {/* Div 2 (Direita no PC / Fica em destaque no Celular) */}
                 <div className="col-span-1">
                     <p id="textHome" className="text-start text-sm md:text-base font-bold">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur risus ac dolor fermentum lacinia. Ut porta purus et accumsan dignissim. Maecenas laoreet sodales odio. Sed id urna erat. Fusce fermentum mollis metus, id suscipit risus malesuada non. Integer bibendum tellus in sapien tempus volutpat.
+                        Born in 2005
+                        in Piracicaba, Brazil.
+                        I believe
+                        web design
+                        can be more
+                        diverse and inspiring.
+                        With a mission
+                        to present
+                        the possibilities
+                        of web design,
+                        I am pursuing
+                        new expressions
+                        through experiments
+                        and thoughts.
                     </p>
                 </div>
 
