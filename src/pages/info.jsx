@@ -14,25 +14,25 @@ export function Info() {
                     <a id="infoA" href="#">Download <i class="fa-solid fa-arrow-right"></i> </a>
                 </div>
                 <div id="topics" className="col-span-1 text-end">
-                        <p className="text-5xl mb-5" id="infoTitle">Front-End Developer</p>
+                        <p className="text-sm md:text-2xl lg:text-5xl mb-0 lg:mb-5" id="infoTitle">Front-End Developer</p>
                         <div className="grid grid-cols-3">
                             <div className="col-span-1"></div>
                             <div className="col-span-2">
-                                <p id="titleDesc" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
+                                <p id="titleDesc" className="text-sm lg:text-md" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
                             </div>
                         </div>
-                        <p className="text-5xl mt-5 mb-5" id="infoTitle">Computer Science</p>
+                        <p className="text-5xl mt-5 mb-0 lg:mb-5 text-sm md:text-2xl lg:text-5xl" id="infoTitle">Computer Science</p>
                         <div className="grid grid-cols-3">
                             <div className="col-span-1"></div>
                             <div className="col-span-2">
-                                <p id="titleDesc" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
+                                <p id="titleDesc"className="text-sm lg:text-md" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
                             </div>
                         </div>
-                        <p className="text-5xl mt-5 mb-5" id="infoTitle">Technical System</p>
+                        <p className="text-5xl mt-5 mb-0 lg:mb-5 text-sm md:text-2xl lg:text-5xl" id="infoTitle">Technical System</p>
                         <div className="grid grid-cols-3">
                             <div className="col-span-1"></div>
                             <div className="col-span-2">
-                                <p id="titleDesc" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
+                                <p id="titleDesc" className="text-sm lg:text-md" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
                             </div>
                         </div>
                 </div>
