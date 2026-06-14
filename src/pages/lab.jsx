@@ -138,12 +138,32 @@ export function Lab() {
     }, []); // O array vazio garante que isso rode apenas uma vez quando o componente montar
     return (
         <div ref={containerRef}>
-            <div className="headerLab text-end">
-                <h3 id="titleLab" className="text-5xl">Lab</h3>
-                <div id="iconsLab">
-                    <i id='iconlabone' class="fa-solid fa-skull-crossbones parallax-layer" data-speed="12"></i>
-                    <i id='iconlabtwo' class="fa-solid fa-flask-vial parallax-layer" data-speed="20"></i>
-                    <i id='iconlabthree' class="fa-solid fa-vial-virus parallax-layer" data-speed="8"></i>
+            {/* Adicionei o relative e um p-5 para dar respiro igual ao dos projetos */}
+            <div className="headerLab text-end relative p-5">
+
+                {/* Título responsivo igual ao Starred Projects */}
+                <h3 id="titleLab" className="text-3xl md:text-5xl font-bold text-black dark:text-white">
+                    Lab
+                </h3>
+
+                {/* O container ganha relative e h-5 para segurar os absolutos sem quebrar o layout */}
+                <div id="iconsLab" className="relative w-full h-5">
+
+                    {/* Ícone 1 (Caveira): Começa mais perto e desce em telas maiores */}
+                    <i id='iconlabone'
+                        className="fa-solid fa-skull-crossbones parallax-layer absolute text-[25px] text-[#283618] right-[50px] top-[-20px] md:right-[80px] md:top-[-35px] lg:right-[120px] lg:top-[-50px]"
+                        data-speed="12"></i>
+
+                    {/* Ícone 2 (Frasco de baixo): Reduzi o recuo inferior no mobile para não invadir o conteúdo de baixo */}
+                    <i id='iconlabtwo'
+                        className="fa-solid fa-flask-vial parallax-layer absolute text-[26px] text-[#283618] right-0 bottom-[-20px] md:bottom-[-30px] lg:bottom-[-40px]"
+                        data-speed="20"></i>
+
+                    {/* Ícone 3 (Frasco de cima): Acompanha a caveira, mas um pouco mais alto e com opacidade (opacity-70) */}
+                    <i id='iconlabthree'
+                        className="fa-solid fa-vial-virus parallax-layer absolute opacity-70 text-[#283618] right-[60px] top-[-30px] md:right-[100px] md:top-[-45px] lg:right-[140px] lg:top-[-65px]"
+                        data-speed="8"></i>
+
                 </div>
             </div>
             <GithubReposWidget username="GuiPolezi" />
