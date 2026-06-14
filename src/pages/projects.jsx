@@ -88,50 +88,84 @@ export function Projects() {
                 </div>
             </div>
             <div className="content mt-15">
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Coluna da Imagem */}
                     <div className="col-span-1">
-                        <div className="imageone">
-                        </div>
+                        <div className="imageone w-full rounded-lg min-h-[200px] md:h-full bg-cover bg-top"></div>
                     </div>
                     <div className="col-span-1">
-                        <div className="grid grid-cols-6">
-                            <div className="col-span-1"></div>
-                            <div className="col-span-5 flex flex-col">
-                                <p id="infoText" className="mb-2">01 // Beta Jahint</p>
-                                <h4 className="text-4xl mb-2">Jahint</h4>
-                                <p className="text-justify mb-25" style={{ opacity: '0.5' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ultrices elementum. Fusce id urna sed tortor malesuada pulvinar vitae tristique mi.</p>
-                                <div className="flex gap-5">
-                                    <a id="infoA" href="https://github.com/GuiPolezi">Live Demo <i className="fa-solid fa-arrow-right"></i> </a>
-                                    <a className="text-black dark:text-white" id="infoA" href="/">GitHub <i className="fa-solid fa-arrow-right"></i> </a>
+                        {/* Adicionei um 'mt-4 md:mt-0' para o texto não ficar colado na imagem no celular */}
+                        <div className="grid grid-cols-6 mt-4 md:mt-0">
 
+                            {/* MÁGICA AQUI: Oculta o espaço vazio no celular (hidden) e mostra no PC (md:block) */}
+                            <div className="hidden md:block md:col-span-1"></div>
+
+                            {/* No celular ele ocupa todas as 6 colunas (col-span-6). No PC ele volta a ocupar 5 (md:col-span-5) */}
+                            <div className="col-span-6 md:col-span-5 flex flex-col">
+
+                                <p id="infoText" className="mb-2 text-xs md:text-sm text-gray-500">01 // Beta Jahint</p>
+
+                                {/* Título um pouco menor no celular para não quebrar linha de forma feia */}
+                                <h4 className="text-3xl md:text-4xl mb-2 font-bold text-black dark:text-white">Jahint</h4>
+
+                                {/* Troquei o style de opacidade pela classe nativa 'opacity-50' e ajustei o text-size */}
+                                <p className="text-justify mb-6 md:mb-25 opacity-50 text-sm md:text-base">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ultrices elementum. Fusce id urna sed tortor malesuada pulvinar vitae tristique mi.
+                                </p>
+
+                                <div className="flex gap-5 text-sm md:text-base">
+                                    <a id="infoA" href="https://github.com/GuiPolezi">
+                                        Live Demo <i className="fa-solid fa-arrow-right ml-1"></i>
+                                    </a>
+                                    <a className="text-black dark:text-white" id="infoA" href="/">
+                                        GitHub <i className="fa-solid fa-arrow-right ml-1"></i>
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="content mt-50">
-                <div className="grid grid-cols-2">
-                    <div className="col-span-1">
+            {/* Reduzi o mt-50 no mobile para mt-16 para não criar um espaço gigante no celular */}
+            <div className="content mt-16 md:mt-50">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    {/* Coluna do Texto */}
+                    {/* 'order-2' joga o texto para baixo no celular. 'md:order-1' traz ele de volta para a esquerda no PC */}
+                    <div className="col-span-1 order-2 md:order-1 mt-4 md:mt-0">
                         <div className="grid grid-cols-6">
-                            <div className="col-span-5 flex flex-col">
-                                <p id="infoText" className="mb-2">02 // MyDesktop</p>
-                                <h4 className="text-4xl mb-2">My Desktop</h4>
-                                <p className="text-justify mb-25" style={{ opacity: '0.5' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ultrices elementum. Fusce id urna sed tortor malesuada pulvinar vitae tristique mi.</p>
-                                <div className="flex gap-5">
-                                    <a id="infoA" href="https://github.com/GuiPolezi">Live Demo <i className="fa-solid fa-arrow-right"></i> </a>
-                                    <a style={{ color: 'black' }} id="infoA" href="/">GitHub <i className="fa-solid fa-arrow-right"></i> </a>
+
+                            {/* O texto ocupa todas as 6 colunas no celular e 5 no PC */}
+                            <div className="col-span-6 md:col-span-5 flex flex-col">
+                                <p id="infoText" className="mb-2 text-xs md:text-sm text-gray-500">02 // MyDesktop</p>
+                                <h4 className="text-3xl md:text-4xl mb-2 font-bold text-black dark:text-white">My Desktop</h4>
+                                <p className="text-justify mb-6 md:mb-25 opacity-50 text-sm md:text-base">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ultrices elementum. Fusce id urna sed tortor malesuada pulvinar vitae tristique mi.
+                                </p>
+                                <div className="flex gap-5 text-sm md:text-base">
+                                    <a id="infoA" href="https://github.com/GuiPolezi">
+                                        Live Demo <i className="fa-solid fa-arrow-right ml-1"></i>
+                                    </a>
+                                    <a className="text-black dark:text-white" id="infoA" href="/">
+                                        GitHub <i className="fa-solid fa-arrow-right ml-1"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div className="col-span-1"></div>
-                        </div>
-                    </div>
-                    <div className="col-span-1">
-                        <div className="imagetwo">
+
+                            {/* MÁGICA DO ESPAÇADOR: Oculto no celular, aparece na direita no PC */}
+                            <div className="hidden md:block md:col-span-1"></div>
 
                         </div>
-
                     </div>
+
+                    {/* Coluna da Imagem */}
+                    {/* 'order-1' faz a imagem carregar no topo no celular. 'md:order-2' joga ela para a direita no PC */}
+                    <div className="col-span-1 order-1 md:order-2">
+                        {/* Mesma correção de altura do primeiro bloco: min-h no celular, h-full no PC */}
+                        <div className="imagetwo w-full rounded-lg min-h-[300px] md:h-full bg-cover bg-top"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
