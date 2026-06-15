@@ -91,7 +91,7 @@ export function Projects() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Coluna da Imagem */}
                     <div className="col-span-1">
-                        <div className="imageone w-full rounded-lg min-h-[200px] md:h-full bg-cover bg-top"></div>
+                        <div className="imageone w-full rounded-lg min-h-[300px] md:h-full lg:h-[400px] bg-cover bg-top"></div>
                     </div>
                     <div className="col-span-1">
                         {/* Adicionei um 'mt-4 md:mt-0' para o texto não ficar colado na imagem no celular */}
