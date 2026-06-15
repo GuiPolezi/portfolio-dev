@@ -5,10 +5,10 @@ export function Info() {
                 <div className="col-span-2 md:col-span-1">
                     <h3 id="infoText" className="mb-2">Info</h3>
                     <p className="font-bold text-justify mb-2 md:mb-10 text-[10px] md:text-xs lg:text-md 2xl:text-lg" id="infoP">
-                        Busco me tornar um Artista e Desenvolvedor Independente.  
+                        I'm an independent Developer and Artist. 
                     </p>
                     <p className="font-bold text-justify mb-2 lg:mb-10 text-[10px] md:text-xs lg:text-md 2xl:text-lg" id="infoP">
-                        Morbi nec ultrices est. Pellentesque ligula urna, elementum commodo urna sed, interdum faucibus est. Pellentesque a ante eu diam malesuada tincidunt nec id eros. Aliquam eros arcu, tempor quis leo vitae, posuere rhoncus turpis. Curabitur elementum leo eget massa elementum, vel laoreet massa blandit. Aenean mattis vulputate auctor. Sed non ipsum congue, sollicitudin mauris et, porta magna. Suspendisse in urna at purus porta luctus sed at sapien. Curabitur scelerisque imperdiet elit et ultricies.
+                       At first, grasping anything related to software development was truly challenging. The overwhelming amount of new information made me feel confused, as if I would never get the hang of it. I pushed through, looked for foundational courses, started university, and began my own projects. Now I stand here, showcasing a glimpse of my art to the digital world. To find out more, please access my Resume below.
                     </p>
                     <h3 id="infoText">My CV</h3>
                     <a id="infoA" className="text-xs md:text-md lg:text-md 2xl:text-lg" href="files/Curriculo-2026.pdf" target="_blank">Download <i class="fa-solid fa-arrow-right"></i> </a>
@@ -20,7 +20,7 @@ export function Info() {
                         <div className="grid grid-cols-1 md:grid-cols-3">
                             <div className="col-span-1 hidden md:block"></div>
                             <div className="col-span-1 md:col-span-2">
-                                <p id="titleDesc" className="text-[10px] md:text-xs lg:text-md 2xl:text-lg" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
+                                <p id="titleDesc" className="text-[10px] md:text-xs lg:text-md" >Beyond just writing code, my goal is to bring designs to life with fluid layouts, a sharp focus on micro-details, and an intuitive, memorable user experience.</p>
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@ export function Info() {
                         <div className="grid grid-cols-1 md:grid-cols-3">
                             <div className="col-span-1 hidden md:block"></div>
                             <div className="col-span-1 md:col-span-2">
-                                <p id="titleDesc" className="text-[10px] md:text-xs lg:text-md 2xl:text-lg" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
+                                <p id="titleDesc" className="text-[10px] md:text-xs lg:text-md" >Computer Science undergraduate at Faculdade de Engenharia de Piracicaba - EEP. College is the environment where I continuously refine my logic, algorithms, and analytical thinking.</p>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ export function Info() {
                         <div className="grid grid-cols-1 md:grid-cols-3">
                             <div className="col-span-1 hidden md:block"></div>
                             <div className="col-span-1 md:col-span-2">
-                                <p id="titleDesc" className="text-[10px] md:text-xs lg:text-md 2xl:text-lg" >Maecenas auctor, ligula eu volutpat commodo, arcu nulla tristique urna, id consectetur turpis arcu sit amet risus.</p>
+                                <p id="titleDesc" className="text-[10px] md:text-xs lg:text-md" >Working in IT Support, I turn complex reports into structured technical solutions. My routine involves continuous diagnostics and deep troubleshooting of software and databases, backed by an advanced mastery in the administration and maintenance of Windows ecosystems.</p>
                             </div>
                         </div>
                     </div>
