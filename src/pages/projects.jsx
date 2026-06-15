@@ -110,7 +110,7 @@ export function Projects() {
 
                                 {/* Troquei o style de opacidade pela classe nativa 'opacity-50' e ajustei o text-size */}
                                 <p className="text-justify mb-6 md:mb-25 opacity-50 text-sm md:text-base">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ultrices elementum. Fusce id urna sed tortor malesuada pulvinar vitae tristique mi.
+                                    Fashion and lifestyle e-commerce built from scratch with Shopify Hydrogen. Jahint is an independent clothing brand that connects the high-performance aesthetics of the fitness niche to medicinal cannabis culture. The project represents the union of an authentic concept, striking visual design, and cutting-edge web engineering.
                                 </p>
 
                                 <div className="flex gap-5 text-sm md:text-base">
@@ -138,7 +138,10 @@ export function Projects() {
                                 <p id="infoText" className="mb-2 text-xs md:text-sm text-gray-500">02 // MyDesktop</p>
                                 <h4 className="text-3xl md:text-4xl mb-2 font-bold text-black dark:text-white">My Desktop</h4>
                                 <p className="text-justify mb-6 md:mb-25 opacity-50 text-sm md:text-base">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ultrices elementum. Fusce id urna sed tortor malesuada pulvinar vitae tristique mi.
+                                    Your workspace for taking notes and accessing other services. <br></br><br></br>
+                                    A web-based system for managing individual or group information.
+
+                                    Add your most used informations and guaranteed a quickly access for this informations
                                 </p>
                                 <div className="flex gap-5 text-sm md:text-base">
                                     <a id="infoA" href="https://my-desktop-gold.vercel.app/" target="_blank">
@@ -160,7 +163,7 @@ export function Projects() {
                     {/* 'order-1' faz a imagem carregar no topo no celular. 'md:order-2' joga ela para a direita no PC */}
                     <div className="col-span-1 order-1 md:order-2">
                         {/* Mesma correção de altura do primeiro bloco: min-h no celular, h-full no PC */}
-                        <div className="imagetwo w-full rounded-lg min-h-[300px] md:h-full bg-cover bg-top"></div>
+                        <div className="imagetwo w-full rounded-lg min-h-[300px] md:h-full lg:h-[400px] bg-cover bg-top"></div>
                     </div>
 
                 </div>
