@@ -2,6 +2,8 @@
 
 > Portfólio pessoal desenvolvido com **React** — apresentando projetos, stack tecnológica e formas de contato.
 
+🌐 **Acesse em:** [guipolezi.com](https://guipolezi.com)
+
 ---
 
 ## 📋 Índice
@@ -11,7 +13,6 @@
 - [Funcionalidades](#funcionalidades)
 - [Estrutura de Páginas](#estrutura-de-páginas)
 - [Como Rodar Localmente](#como-rodar-localmente)
-- [Roadmap](#roadmap)
 - [Licença](#licença)
 
 ---
@@ -44,8 +45,8 @@ Portfólio desenvolvido para apresentar projetos, habilidades técnicas e experi
 - [x] Página LAB (experimentos criativos)
 - [x] Loading screen no `index.html`
 - [x] Página de Skills
-- [ ] Responsividade completa em todas as áreas
-- [ ] Conteúdos reais em todas as páginas
+- [x] Responsividade completa em todas as áreas
+- [x] Conteúdos reais em todas as páginas
 
 ---
 
@@ -55,9 +56,9 @@ Portfólio desenvolvido para apresentar projetos, habilidades técnicas e experi
 |---|---|---|
 | Home | `/` | ✅ Concluída |
 | Projetos | `/projects` | ✅ Concluída |
-| Contato | `/contact` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
-| LAB | `/lab` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
-| Info | `/info` | ✅ Estrutura pronta — ⚠️ conteúdo pendente |
+| Contato | `/contact` | ✅ Concluída |
+| LAB | `/lab` | ✅ Concluída |
+| Info | `/info` | ✅ Concluída |
 | Skills | `/skills` | ✅ Concluída |
 
 ---
@@ -90,37 +91,6 @@ VITE_EMAILJS_TEMPLATE_ID=seu_template_id
 VITE_EMAILJS_PUBLIC_KEY=sua_public_key
 VITE_RECAPTCHA_SITE_KEY=sua_site_key
 ```
-
----
-
-## Roadmap
-
-### 🚧 Em Progresso
-
-#### 📱 Responsividade
-- [ ] Ajustar layout do header para mobile
-- [ ] Adaptar grid de projetos para telas menores
-- [ ] Revisar tipografia e espaçamentos em breakpoints menores
-- [ ] Testar e corrigir em dispositivos iOS e Android
-
-#### ✍️ Conteúdo real nas páginas
-Todas as páginas estão com estrutura pronta, mas ainda com dados fictícios ou placeholder.
-- [ ] Home — textos, bio e links reais
-- [ ] Projects — projetos reais com descrição, links e tecnologias
-- [ ] Info — experiências, formação e sobre mim
-- [ ] LAB — projetos experimentais reais com preview
-- [ ] Contact — links de redes sociais reais (GitHub, LinkedIn, Instagram)
-
----
-
-### ⚠️ Lembretes de Deploy
-
-> Antes de publicar o site, lembrar de:
-
-- **reCAPTCHA:** Acessar o [Google reCAPTCHA Console](https://www.google.com/recaptcha/admin), ir em **Domínios** e adicionar:
-  - `localhost` (para desenvolvimento local)
-  - O domínio real do site (ex: `guilhermepolezi.com.br`)
-- Configurar as variáveis de ambiente na plataforma de deploy (Vercel, Netlify, etc.)
 
 ---
 
