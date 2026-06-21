@@ -50,9 +50,7 @@ export function Contact() {
                             <li>
                                 <a href="https://www.linkedin.com/in/guilherme-polezi-machado/" target='_blank'>Linkedin</a>
                             </li>
-                            <li>
-                                <a href="https://www.instagram.com/GuiPolezi" target='_blank'>Instagram</a>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>
