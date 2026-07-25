@@ -208,6 +208,47 @@ export function Projects() {
                     </div>
                 </div>
             </div>
+            {/* Reduzi o mt-50 no mobile para mt-16 para não criar um espaço gigante no celular */}
+            <div className="content mt-16 md:mt-50">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    {/* Coluna do Texto */}
+                    {/* 'order-2' joga o texto para baixo no celular. 'md:order-1' traz ele de volta para a esquerda no PC */}
+                    <div className="col-span-1 order-2 md:order-1 mt-4 md:mt-0">
+                        <div className="grid grid-cols-6">
+
+                            {/* O texto ocupa todas as 6 colunas no celular e 5 no PC */}
+                            <div className="col-span-6 md:col-span-5 flex flex-col">
+                                <p id="infoText" className="mb-2 text-xs md:text-sm text-gray-500">04 // HelpDesk_Alpha</p>
+                                <h4 className="text-3xl md:text-4xl mb-2 font-bold text-black dark:text-white">HelpDesk</h4>
+                                <p className="text-justify mb-6 md:mb-25 opacity-50 text-sm md:text-base">
+                                    A full-featured ticketing and service-desk prototype built to validate requirements before the production build. Multi-tenant workspaces, role-based permissions, SLAs, workflows and analytics — running entirely in the browser, with no backend.
+                                </p>
+                                <div className="flex gap-5 text-sm md:text-base">
+                                    <a id="infoA" href="https://sys-req.vercel.app//" target="_blank">
+                                        Live Demo <i className="fa-solid fa-arrow-right ml-1"></i>
+                                    </a>
+                                    <a className="text-black dark:text-white" id="infoA" href="https://github.com/GuiPolezi/sys.req" target="_blank">
+                                        GitHub <i className="fa-solid fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* MÁGICA DO ESPAÇADOR: Oculto no celular, aparece na direita no PC */}
+                            <div className="hidden md:block md:col-span-1"></div>
+
+                        </div>
+                    </div>
+
+                    {/* Coluna da Imagem */}
+                    {/* 'order-1' faz a imagem carregar no topo no celular. 'md:order-2' joga ela para a direita no PC */}
+                    <div className="col-span-1 order-1 md:order-2">
+                        {/* Mesma correção de altura do primeiro bloco: min-h no celular, h-full no PC */}
+                        <div className="imagefour w-full rounded-lg min-h-[300px] md:h-full lg:h-[400px] bg-cover bg-top"></div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     )
 }
