@@ -249,6 +249,44 @@ export function Projects() {
 
                 </div>
             </div>
+            
+             <div className="content mt-16 md:mt-50">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Coluna da Imagem */}
+                    <div className="col-span-1">
+                        <div className="imagefive w-full rounded-lg min-h-[300px] md:h-full lg:h-[400px] bg-cover bg-top"></div>
+                    </div>
+                    <div className="col-span-1">
+                        {/* Adicionei um 'mt-4 md:mt-0' para o texto não ficar colado na imagem no celular */}
+                        <div className="grid grid-cols-6 mt-4 md:mt-0">
+
+                            {/* MÁGICA AQUI: Oculta o espaço vazio no celular (hidden) e mostra no PC (md:block) */}
+                            <div className="hidden md:block md:col-span-1"></div>
+
+                            {/* No celular ele ocupa todas as 6 colunas (col-span-6). No PC ele volta a ocupar 5 (md:col-span-5) */}
+                            <div className="col-span-6 md:col-span-5 flex flex-col">
+
+                                <p id="infoText" className="mb-2 text-xs md:text-sm text-gray-500">05 // Jahint.Studies</p>
+
+                                {/* Título um pouco menor no celular para não quebrar linha de forma feia */}
+                                <h4 className="text-3xl md:text-4xl mb-2 font-bold text-black dark:text-white">Jahint.Studies</h4>
+
+                                {/* Troquei o style de opacidade pela classe nativa 'opacity-50' e ajustei o text-size */}
+                                <p className="text-justify mb-6 md:mb-25 opacity-50 text-sm md:text-base">
+                                    A modern, React-based system to organize your academic studies. Store all your class notes, assignment developments, and online exam dates, keeping your essential information always within reach.
+                                </p>
+
+                                 <div className="flex gap-5 text-sm md:text-base">
+                                    <a id="infoA" href="https://jahint-studies.com/" target="_blank">
+                                        Site <i className="fa-solid fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
